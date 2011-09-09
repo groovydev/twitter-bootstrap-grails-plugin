@@ -6,18 +6,18 @@ Bootstrap is Twitter's toolkit for kickstarting CSS for websites, apps, and more
 
 To get started -- checkout http://twitter.github.com/bootstrap!
 
-#Including the resources
+# Including the resources
 
 You must use the Grails resources framework to make use of this plugin. The resources exposed by this plugin are:
 
     bootstrap - twitter bootstrap css (version 1.2.0)
 
-#Usage
+# Usage
 
-<r:require modules="bootstrap"/>
+> <r:require modules="bootstrap"/>
 
 
-#Copyright and License
+# Copyright and License
 
 ##Copyright 2011 Twitter, Inc.
 
