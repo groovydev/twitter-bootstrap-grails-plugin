@@ -17,7 +17,7 @@ You must use the Grails resources framework to make use of this plugin. The reso
 Usage
 -----
 
-> <r:require modules="bootstrap"/>
+    <r:require modules="bootstrap"/>
 
 
 Copyright and License
