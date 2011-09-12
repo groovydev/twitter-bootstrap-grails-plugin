@@ -1,7 +1,7 @@
 modules = {
     
     bootstrap {
-        resource url:'/js/bootstrap-1.2.0.css', disposition: 'head'
+        resource url:[plugin: 'twitter-bootstrap', dir: 'css', file:'bootstrap-1.2.0.css'], disposition: 'head'
     }
 
 }

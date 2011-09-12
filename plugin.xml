@@ -1,4 +1,4 @@
-<plugin name='groovydev-twitter-bootstrap' version='0.1' grailsVersion='1.3.7 &gt; *'>
+<plugin name='twitter-bootstrap' version='0.2' grailsVersion='1.3.7 &gt; *'>
   <author>Karol Balejko</author>
   <authorEmail>kb@groovydev.org</authorEmail>
   <title>Twitter Bootstrap CSS framework resource files</title>
@@ -39,6 +39,8 @@ Unless required by applicable law or agreed to in writing, software distributed 
     <resource>DataSource</resource>
     <resource>UrlMappings</resource>
   </resources>
-  <dependencies />
+  <dependencies>
+    <plugin name='resources' version='1.0 &gt; *' />
+  </dependencies>
   <behavior />
 </plugin>
