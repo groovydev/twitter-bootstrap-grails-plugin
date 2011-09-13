@@ -13,6 +13,7 @@ Including the resources
 You must use the Grails resources framework to make use of this plugin. The resources exposed by this plugin are:
 
     bootstrap - twitter bootstrap css (version 1.2.0)
+    bootstrap-less - twitter bootstrap use with less (version 1.2.0)
 
 Usage
 -----
