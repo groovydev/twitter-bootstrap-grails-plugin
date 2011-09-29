@@ -1,6 +1,12 @@
+import org.apache.log4j.Logger;
+import org.groovydev.TwitterBootstrapTagLib;
+
 class TwitterBootstrapGrailsPlugin {
+    
+    Logger log = Logger.getLogger('grails.plugins.twitterBootstrap.TwitterBootstrapGrailsPlugin')
+    
     // the plugin version
-    def version = "0.2"
+    def version = "0.3"
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "1.3.7 > *"
     // the other plugins this plugin depends on
@@ -12,7 +18,7 @@ class TwitterBootstrapGrailsPlugin {
 
     def author = "Karol Balejko"
     def authorEmail = "kb@groovydev.org"
-    def title = "Twitter Bootstrap CSS framework resource files"
+    def title = "Twitter Bootstrap CSS framework resource files plugin"
     def description = '''\\
 Provides Twitter Bootstrap CSS framework resource files.
 
@@ -21,29 +27,38 @@ Bootstrap is Twitter's toolkit for kickstarting CSS for websites, apps, and more
 To get started -- checkout http://twitter.github.com/bootstrap!
 
 Including the resources
+-----------------------
 
 You must use the Grails resources framework to make use of this plugin. The resources exposed by this plugin are:
 
     bootstrap - twitter bootstrap css (version 1.2.0)
+    bootstrap-less - twitter bootstrap use with less (version 1.2.0)
 
 Usage
+-----
 
-<r:require modules="bootstrap"/>
+    <r:require modules="bootstrap"/>
 
+Configuration
+-------------
 
-Copyright and License
-
-Copyright 2011 Twitter, Inc.
-
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+Fix grails taglib g:paginate to work with bootstrap css. 
+ 
+    grails.plugins.twitterbootstrap.fixtaglib = true
 
 '''
 
     // URL to the plugin's documentation
-    def documentation = "http://grails.org/plugin/twitter-bootstrap"
+    def documentation = "https://github.com/groovydev/twitter-bootstrap-grails-plugin/blob/master/README.md"
 
+    def doWithSpring = {
+     
+        def configTabLib = application.config.grails.plugins.twitterbootstrap.fixtaglib
+        if (application.config.grails.plugins.twitterbootstrap.fixtaglib) {
+            log.debug "Found config grails.plugins.twitterbootstrap.fixtaglib = ${configTabLib}"
+            application.addArtefact('TagLib', TwitterBootstrapTagLib)
+            log.debug "TwitterBootstrapTagLib added"
+        }
+    }
+    
 }

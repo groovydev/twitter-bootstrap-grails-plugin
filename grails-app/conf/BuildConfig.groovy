@@ -15,7 +15,6 @@ grails.project.dependency.resolution = {
         grailsCentral()
     }
     plugins {
-        compile ":resources:latest.integration"
     }
     dependencies { }
 }
