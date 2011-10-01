@@ -20,7 +20,7 @@ You must use the Grails resources framework to make use of this plugin. The reso
     bootstrap-modal - bootstrap modal javascript resource
     bootstrap-popover - bootstrap popover javascript resource
     bootstrap-scrollspy - bootstrap scrollspy javascript resource
-    bootstrap-tabs - bootstrap alerts tabs resource
+    bootstrap-tabs - bootstrap tabs javascript resource
     bootstrap-twipsy - bootstrap twipsy javascript resource
 
     bootstrap - bootstrap css and javascript resources 
