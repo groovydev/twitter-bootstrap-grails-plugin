@@ -64,9 +64,7 @@ modules = {
     }
 
     bootstrap {
-        if (configTagLib) {
-            dependsOn 'bootstrap-css,bootstrap-js'
-        }
+        dependsOn 'bootstrap-css,bootstrap-js'
     }
 
     'bootstrap-less' {
