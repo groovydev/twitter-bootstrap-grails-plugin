@@ -12,8 +12,19 @@ Including the resources
 
 You must use the Grails resources framework to make use of this plugin. The resources exposed by this plugin are:
 
-    bootstrap - twitter bootstrap css (version 1.2.0)
-    bootstrap-less - twitter bootstrap use with less (version 1.2.0)
+    bootstrap-js - all javascript resources
+    bootstrap-css - all css resorces
+
+    bootstrap-alerts - bootstrap alerts javascript resource
+    bootstrap-dropdown - bootstrap dropdown javascript resource
+    bootstrap-modal - bootstrap modal javascript resource
+    bootstrap-popover - bootstrap popover javascript resource
+    bootstrap-scrollspy - bootstrap scrollspy javascript resource
+    bootstrap-tabs - bootstrap alerts tabs resource
+    bootstrap-twipsy - bootstrap twipsy javascript resource
+
+    bootstrap - bootstrap css and javascript resources 
+    bootstrap-less - bootstrap use with less
 
 Usage
 -----
