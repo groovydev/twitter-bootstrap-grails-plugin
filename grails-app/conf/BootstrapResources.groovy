@@ -74,7 +74,7 @@ modules = {
         dependency << 'bootstrap-js'
            
         if (dependency) {
-            dependsOn (dependency.join(','))
+            dependsOn dependency
         }
     }
        
