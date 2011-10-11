@@ -22,10 +22,15 @@ You must use the Grails resources framework to make use of this plugin. The reso
     bootstrap-scrollspy - bootstrap scrollspy javascript resource
     bootstrap-tabs - bootstrap tabs javascript resource
     bootstrap-twipsy - bootstrap twipsy javascript resource
+    bootstrap-less - bootstrap less resource
 
-    bootstrap - bootstrap css and javascript resources 
-    bootstrap-less - bootstrap use with less
+    bootstrap - all bootstrap css (or less) and javascript resources 
 
+Note 
+-----
+A bootstrap resource depends on bootstrap-css and bootstrap-js. 
+In case of lesscss-resources plugin is installed, bootstrap resource depends on bootstrap-less and bootstrap-js.   
+ 
 Usage
 -----
 

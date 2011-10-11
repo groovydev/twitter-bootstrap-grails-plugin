@@ -2,21 +2,11 @@ def dev = grails.util.GrailsUtil.isDevelopmentEnv()
 
 def applicationContext = org.codehaus.groovy.grails.commons.ApplicationHolder.application.mainContext
 def lesscssPlugin = applicationContext.pluginManager.getGrailsPlugin('lesscss-resources')
+def jqueryPlugin = applicationContext.pluginManager.getGrailsPlugin('jquery')
 def configTagLib = org.codehaus.groovy.grails.commons.ApplicationHolder.application.config.grails.plugins.twitterbootstrap.fixtaglib
 def cssFile = "bootstrap.css"
 def cssminFile = "bootstrap.min.css"
 def lesscssFile = "bootstrap.less"
-
-def file
-def attrs
-
-if (lesscssPlugin != null) {
-    file = lesscssFile
-    attrs = [rel: "stylesheet/less", type:'css']
-} else {
-    file = (dev ? cssFile : cssminFile)
-    attrs = [:]
-}
 
 modules = {
 
@@ -28,7 +18,7 @@ modules = {
         if (configTagLib) {
             dependsOn 'bootstrap-fixtaglib'
         }
-        resource url:[plugin: 'twitter-bootstrap', dir: 'css', file: file], attrs:attrs, disposition: 'head', exclude:'minify', bundle: 'bundle_bootstrap'
+        resource url:[plugin: 'twitter-bootstrap', dir: 'css', file: (dev ? cssFile : cssminFile)], disposition: 'head', exclude:'minify', bundle: 'bundle_bootstrap'
     }
 
     'bootstrap-alerts' {
@@ -60,11 +50,11 @@ modules = {
     }
 
     'bootstrap-js' {
-        dependsOn 'bootstrap-alerts,bootstrap-dropdown,bootstrap-modal,bootstrap-popover,bootstrap-scrollspy,bootstrap-tabs,bootstrap-twipsy'
-    }
-
-    bootstrap {
-        dependsOn 'bootstrap-css,bootstrap-js'
+        def dependency = 'bootstrap-alerts,bootstrap-dropdown,bootstrap-modal,bootstrap-popover,bootstrap-scrollspy,bootstrap-tabs,bootstrap-twipsy'
+        if (jqueryPlugin) {
+            dependency = "jquery,${dependency}"
+        }
+        dependsOn dependency
     }
 
     'bootstrap-less' {
@@ -74,4 +64,18 @@ modules = {
         resource url:[plugin: 'twitter-bootstrap', dir: 'css', file: lesscssFile], attrs:[rel: "stylesheet/less", type:'css'], disposition: 'head', exclude:'minify', bundle: 'bundle_bootstrap'
     }
 
+    bootstrap {
+        def dependency = []
+        if (lesscssPlugin) {
+            dependency << 'bootstrap-less'
+        } else {
+            dependency << 'bootstrap-css'
+        }
+        dependency << 'bootstrap-js'
+           
+        if (dependency) {
+            dependsOn (dependency.join(','))
+        }
+    }
+       
 }
