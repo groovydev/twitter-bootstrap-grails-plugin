@@ -34,6 +34,7 @@ modules = {
     }
 
     'bootstrap-popover' {
+        dependsOn 'bootstrap-twipsy'
         resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-popover.js'], attrs:attrs, disposition: 'head', bundle: 'bundle_bootstrap'
     }
 
