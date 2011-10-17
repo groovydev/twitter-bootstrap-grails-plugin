@@ -1,15 +1,15 @@
 /*!
- * Bootstrap v1.2.0
+ * Bootstrap v1.3.0
  *
  * Copyright 2011 Twitter, Inc
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
- * Date: Fri Sep 16 11:24:41 PDT 2011
+ * Date: Thu Sep 22 12:52:42 PDT 2011
  */
 /* Reset.less
- * Props to Eric Meyer (meyerweb.com) for his CSS reset file. We're using an adapted version here	that cuts out some of the reset HTML elements we will never need here (i.e., dfn, samp, etc).
+ * Props to Eric Meyer (meyerweb.com) for his CSS reset file. We're using an adapted version here   that cuts out some of the reset HTML elements we will never need here (i.e., dfn, samp, etc).
  * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 html, body {
   margin: 0;
@@ -208,6 +208,7 @@ body {
 }
 .container-fluid {
   position: relative;
+  min-width: 940px;
   padding-left: 20px;
   padding-right: 20px;
   zoom: 1;
@@ -226,16 +227,7 @@ body {
   width: 220px;
 }
 .container-fluid > .content {
-  float: left;
-  min-width: 700px;
-  max-width: 1180px;
-  margin-left: 20px;
-}
-.hide {
-  display: none;
-}
-.show {
-  display: block;
+  margin-left: 240px;
 }
 a {
   color: #0069d6;
@@ -252,6 +244,12 @@ a:hover {
 }
 .pull-left {
   float: left;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
 }
 .row {
   zoom: 1;
@@ -1142,10 +1140,10 @@ table tbody tr:last-child td:last-child {
 .zebra-striped tbody tr:hover td {
   background-color: #f5f5f5;
 }
-.zebra-striped .header {
+table .header {
   cursor: pointer;
 }
-.zebra-striped .header:after {
+table .header:after {
   content: "";
   float: right;
   margin-top: 7px;
@@ -1154,21 +1152,21 @@ table tbody tr:last-child td:last-child {
   border-color: #000 transparent;
   visibility: hidden;
 }
-.zebra-striped .headerSortUp, .zebra-striped .headerSortDown {
+table .headerSortUp, table .headerSortDown {
   background-color: rgba(141, 192, 219, 0.25);
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 }
-.zebra-striped .header:hover:after {
+table .header:hover:after {
   visibility: visible;
 }
-.zebra-striped .headerSortDown:after, .zebra-striped .headerSortDown:hover:after {
+table .headerSortDown:after, table .headerSortDown:hover:after {
   visibility: visible;
   filter: alpha(opacity=60);
   -khtml-opacity: 0.6;
   -moz-opacity: 0.6;
   opacity: 0.6;
 }
-.zebra-striped .headerSortUp:after {
+table .headerSortUp:after {
   border-bottom: none;
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
