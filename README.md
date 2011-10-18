@@ -36,13 +36,24 @@ Usage
 
     <r:require modules="bootstrap"/>
 
-Configuration
+Configuration   
 -------------
 
 Fix grails taglib g:paginate to work with bootstrap css. 
  
     grails.plugins.twitterbootstrap.fixtaglib = true
+    
+Control plugin resources bundling.
 
+    grails.plugins.twitterbootstrap.defaultBundle
+        'bundle_name': bundle resources using bundle name
+        false: disable bundling
+        default: 'bundle_bootstrap'
+
+Logging
+-------
+
+    grails.plugins.twitterbootstrap - log category
 
 Copyright and License
 ---------------------

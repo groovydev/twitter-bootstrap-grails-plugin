@@ -1,82 +1,128 @@
+def log = org.apache.log4j.Logger.getLogger('grails.plugins.twitterbootstrap.BootstrapResources')
 def dev = grails.util.GrailsUtil.isDevelopmentEnv()
 
 def applicationContext = org.codehaus.groovy.grails.commons.ApplicationHolder.application.mainContext
 def lesscssPlugin = applicationContext.pluginManager.getGrailsPlugin('lesscss-resources')
 def jqueryPlugin = applicationContext.pluginManager.getGrailsPlugin('jquery')
 def configTagLib = org.codehaus.groovy.grails.commons.ApplicationHolder.application.config.grails.plugins.twitterbootstrap.fixtaglib
+def configDefaultBundle = org.codehaus.groovy.grails.commons.ApplicationHolder.application.config.grails.plugins.twitterbootstrap.defaultBundle 
+if (!configDefaultBundle && !configDefaultBundle.equals(false)) {
+    configDefaultBundle = 'bundle_bootstrap'
+}
 def cssFile = "bootstrap.css"
 def cssminFile = "bootstrap.min.css"
-def lesscssFile = "bootstrap.less"
+
+log.debug "config: grails.plugins.twitterbootstrap.fixtaglib = ${configTagLib}"
+log.debug "config: grails.plugins.twitterbootstrap.defaultBundle = ${configDefaultBundle}"
+log.debug "is lesscss-resources plugin loaded? ${!!lesscssPlugin}"
+log.debug "is jquery plugin loaded? ${!!jqueryPlugin}"
 
 modules = {
 
     'bootstrap-fixtaglib' {
-        resource url:[plugin: 'twitter-bootstrap', dir: 'css', file: 'bootstrap-fixtaglib.css'], disposition: 'head', exclude:'minify', bundle: 'bundle_bootstrap'
+        defaultBundle configDefaultBundle
+        
+        resource url:[plugin: 'twitter-bootstrap', dir: 'css', file: 'bootstrap-fixtaglib.css'], disposition: 'head'
     }
 
     'bootstrap-css' {
+        defaultBundle configDefaultBundle
         if (configTagLib) {
             dependsOn 'bootstrap-fixtaglib'
         }
-        resource url:[plugin: 'twitter-bootstrap', dir: 'css', file: (dev ? cssFile : cssminFile)], disposition: 'head', exclude:'minify', bundle: 'bundle_bootstrap'
+        
+        resource url:[plugin: 'twitter-bootstrap', dir: 'css', file: (dev ? cssFile : cssminFile)], disposition: 'head', exclude:'minify'
     }
 
     'bootstrap-alerts' {
-        resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-alerts.js'], attrs:attrs, disposition: 'head', bundle: 'bundle_bootstrap'
+        defaultBundle configDefaultBundle
+        if (jqueryPlugin) {
+            dependsOn 'jquery'
+        }
+
+        resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-alerts.js'], disposition: 'head'
     }
 
     'bootstrap-dropdown' {
-        resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-dropdown.js'], attrs:attrs, disposition: 'head', bundle: 'bundle_bootstrap'
+        defaultBundle configDefaultBundle
+        if (jqueryPlugin) {
+            dependsOn 'jquery'
+        }
+
+        resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-dropdown.js'], disposition: 'head'
     }
 
     'bootstrap-modal' {
-        resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-modal.js'], attrs:attrs, disposition: 'head', bundle: 'bundle_bootstrap'
+        defaultBundle configDefaultBundle
+        if (jqueryPlugin) {
+            dependsOn 'jquery'
+        }
+        
+        resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-modal.js'], disposition: 'head'
     }
 
     'bootstrap-popover' {
+        defaultBundle configDefaultBundle
         dependsOn 'bootstrap-twipsy'
-        resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-popover.js'], attrs:attrs, disposition: 'head', bundle: 'bundle_bootstrap'
+        
+        if (jqueryPlugin) {
+            dependsOn 'jquery'
+        }
+
+        resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-popover.js'], disposition: 'head'
     }
 
     'bootstrap-scrollspy' {
-        resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-scrollspy.js'], attrs:attrs, disposition: 'head', bundle: 'bundle_bootstrap'
+        defaultBundle configDefaultBundle
+        if (jqueryPlugin) {
+            dependsOn 'jquery'
+        }
+        
+        resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-scrollspy.js'], disposition: 'head'
     }
 
     'bootstrap-tabs' {
-        resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-tabs.js'], attrs:attrs, disposition: 'head', bundle: 'bundle_bootstrap'
+        defaultBundle configDefaultBundle
+        if (jqueryPlugin) {
+            dependsOn "jquery"
+        }
+        
+        resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-tabs.js'], disposition: 'head'
     }
 
     'bootstrap-twipsy' {
-        resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-twipsy.js'], attrs:attrs, disposition: 'head', bundle: 'bundle_bootstrap'
+        defaultBundle configDefaultBundle
+        if (jqueryPlugin) {
+            dependsOn "jquery"
+        }
+        
+        resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-twipsy.js'], disposition: 'head'
     }
 
     'bootstrap-js' {
-        def dependency = 'bootstrap-alerts,bootstrap-dropdown,bootstrap-modal,bootstrap-popover,bootstrap-scrollspy,bootstrap-tabs,bootstrap-twipsy'
+        defaultBundle configDefaultBundle
         if (jqueryPlugin) {
-            dependency = "jquery,${dependency}"
+            dependsOn 'jquery'
         }
-        dependsOn dependency
+        dependsOn 'bootstrap-alerts,bootstrap-dropdown,bootstrap-modal,bootstrap-scrollspy,bootstrap-tabs,bootstrap-twipsy,bootstrap-popover'
     }
 
     'bootstrap-less' {
+        defaultBundle configDefaultBundle
         if (configTagLib) {
             dependsOn 'bootstrap-fixtaglib'
         }
-        resource url:[plugin: 'twitter-bootstrap', dir: 'css', file: lesscssFile], attrs:[rel: "stylesheet/less", type:'css'], disposition: 'head', exclude:'minify', bundle: 'bundle_bootstrap'
+        resource url:[plugin: 'twitter-bootstrap', dir: 'css', file: 'bootstrap.less'], attrs:[rel: "stylesheet/less", type:'css'], disposition: 'head', exclude:'minify'
     }
 
     bootstrap {
-        def dependency = []
+        defaultBundle configDefaultBundle
         if (lesscssPlugin) {
-            dependency << 'bootstrap-less'
+            dependsOn 'bootstrap-less'
         } else {
-            dependency << 'bootstrap-css'
+            dependsOn 'bootstrap-css'
         }
-        dependency << 'bootstrap-js'
-           
-        if (dependency) {
-            dependsOn dependency
-        }
+        dependsOn 'bootstrap-js'
     }
        
 }
