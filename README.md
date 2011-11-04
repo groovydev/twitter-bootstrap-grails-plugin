@@ -54,6 +54,11 @@ Logging
 -------
 
     grails.plugins.twitterbootstrap - log category
+    
+Version
+-------
+
+    Plugin version convention is <original-twitter-boostrap-version>.<plugin-version>
 
 Copyright and License
 ---------------------
