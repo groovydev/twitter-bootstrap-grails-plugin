@@ -99,12 +99,21 @@ modules = {
         resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-twipsy.js'], disposition: 'head'
     }
 
+    'bootstrap-buttons' {
+        defaultBundle configDefaultBundle
+        if (jqueryPlugin) {
+            dependsOn "jquery"
+        }
+        
+        resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-buttons.js'], disposition: 'head'
+    }
+
     'bootstrap-js' {
         defaultBundle configDefaultBundle
         if (jqueryPlugin) {
             dependsOn 'jquery'
         }
-        dependsOn 'bootstrap-alerts,bootstrap-dropdown,bootstrap-modal,bootstrap-scrollspy,bootstrap-tabs,bootstrap-twipsy,bootstrap-popover'
+        dependsOn 'bootstrap-alerts,bootstrap-dropdown,bootstrap-modal,bootstrap-scrollspy,bootstrap-tabs,bootstrap-twipsy,bootstrap-popover,bootstrap-buttons'
     }
 
     'bootstrap-less' {
