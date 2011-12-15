@@ -121,7 +121,7 @@ modules = {
         if (configTagLib) {
             dependsOn 'bootstrap-fixtaglib'
         }
-        resource url:[plugin: 'twitter-bootstrap', dir: 'css', file: 'bootstrap.less'], attrs:[rel: "stylesheet/less", type:'css'], disposition: 'head', exclude:'minify'
+        resource id:'bootstrap-less', url:[plugin: 'twitter-bootstrap', dir: 'css', file: 'bootstrap.less'], attrs:[rel: "stylesheet/less", type:'css'], disposition: 'head'
     }
 
     bootstrap {

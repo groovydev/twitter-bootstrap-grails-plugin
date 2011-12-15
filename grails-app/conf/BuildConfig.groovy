@@ -15,7 +15,8 @@ grails.project.dependency.resolution = {
         grailsCentral()
     }
     plugins {
-        build(":release:1.0.0.RC3") {
+        compile ":resources:latest.integration"
+        build(":release:latest.integration") {
             export = false
         }
     }
