@@ -1,4 +1,4 @@
-<plugin name='twitter-bootstrap' version='1.4.0.13' grailsVersion='1.3.7 &gt; *'>
+<plugin name='twitter-bootstrap' version='1.4.0.14' grailsVersion='1.3.7 &gt; *'>
   <author>Karol Balejko</author>
   <authorEmail>kb@groovydev.org</authorEmail>
   <title>Plugin Twitter Bootstrap CSS framework resource files</title>
@@ -13,6 +13,7 @@ To get started -- checkout http://twitter.github.com/bootstrap!
     <resource>Config</resource>
     <resource>DataSource</resource>
     <resource>UrlMappings</resource>
+    <resource>org.groovydev.TwitterBootstrapTagLib</resource>
   </resources>
   <dependencies>
     <plugin name='resources' version='1.0 &gt; *' />
