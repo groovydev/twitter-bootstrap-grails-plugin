@@ -13,16 +13,21 @@ Including the resources
 You must use the Grails resources framework to make use of this plugin. The resources exposed by this plugin are:
 
     bootstrap-js - all javascript resources
-    bootstrap-css - all css resorces
+    bootstrap-css - all css resources
 
-    bootstrap-alerts - bootstrap alerts javascript resource
+    bootstrap-responsive-css - bootstrap responsive css resource
+    bootstrap-alert - bootstrap alerts javascript resource
     bootstrap-dropdown - bootstrap dropdown javascript resource
     bootstrap-modal - bootstrap modal javascript resource
     bootstrap-popover - bootstrap popover javascript resource
     bootstrap-scrollspy - bootstrap scrollspy javascript resource
-    bootstrap-tabs - bootstrap tabs javascript resource
-    bootstrap-twipsy - bootstrap twipsy javascript resource
-    bootstrap-buttons - bootstrap buttons javascript resource
+    bootstrap-tab - bootstrap tabs javascript resource
+    bootstrap-tooltip - bootstrap tooltips javascript resource
+    bootstrap-button - bootstrap buttons javascript resource
+    bootstrap-carousel - bootstrap carousel javascript resource
+    bootstrap-typeahead - bootstrap typeahead javascript resource
+    bootstrap-collapse - bootstrap collapse javascript resource
+    bootstrap-transition - bootstrap transition javascript resource
     bootstrap-less - bootstrap less resource
 
     bootstrap - all bootstrap css (or less) and javascript resources 
@@ -60,6 +65,16 @@ Versioning
 ----------
 
     Plugin version convention is <original-twitter-boostrap-version>.<plugin-version>
+
+History
+-------
+
+2.0.0.15
+    Upgrade to twitter bootstrap v2.0.0.
+
+1.4.0.14
+    Latest stable plugin edition with twitter-bootstrap v1.4.0
+    Plugin documentation for v1.4.0.14 https://github.com/groovydev/twitter-bootstrap-grails-plugin/blob/v1.4.0.14/README.md
 
 Copyright and License
 ---------------------
