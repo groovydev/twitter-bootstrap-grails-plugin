@@ -4,11 +4,11 @@ import org.groovydev.TwitterBootstrapTagLib
 class TwitterBootstrapGrailsPlugin {
     
     // the plugin version
-    def version = "1.4.0.14"
+    def version = "2.0.0.0"
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "1.3.7 > *"
     // the other plugins this plugin depends on
-    def dependsOn = ['resources':'1.0 > *']
+    def dependsOn = ['resources':'1.1 > *']
     // resources that are excluded from plugin packaging
     def pluginExcludes = [
             "grails-app/views/error.gsp"
