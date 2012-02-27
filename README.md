@@ -69,6 +69,9 @@ Versioning
 History
 -------
 
+2.0.1.17
+    Upgrade to twitter bootstrap v2.0.1.
+
 2.0.0.15
     Upgrade to twitter bootstrap v2.0.0.
 
