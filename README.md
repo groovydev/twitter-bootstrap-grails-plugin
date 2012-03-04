@@ -13,9 +13,10 @@ Including the resources
 You must use the Grails resources framework to make use of this plugin. The resources exposed by this plugin are:
 
     bootstrap-js - all javascript resources
-    bootstrap-css - all css resources
+    bootstrap-css - all css resources (without responsive css)
 
     bootstrap-responsive-css - bootstrap responsive css resource
+
     bootstrap-alert - bootstrap alerts javascript resource
     bootstrap-dropdown - bootstrap dropdown javascript resource
     bootstrap-modal - bootstrap modal javascript resource
@@ -36,25 +37,70 @@ Note
 -----
 A bootstrap resource depends on bootstrap-css and bootstrap-js. 
 In case of lesscss-resources plugin is installed, bootstrap resource depends on bootstrap-less and bootstrap-js.   
- 
+
+To use responsive css, you have to declare bootstrap-responsive-css.
+
 Usage
 -----
 
+Declare bootstrap resource module in GSP page header:
+
     <r:require modules="bootstrap"/>
 
-Configuration   
+Edit your GSP page
+------------------
+
+    <html>
+       <head>
+          <meta name="layout" content="main"/>
+          <r:require modules="bootstrap"/>
+       </head>
+    <body>
+    <h1> Hello World </h1>
+    </body>
+    </html>
+
+
+Edit your Sitemesh layout
+-------------------------
+
+Your grails-app/views/layouts/main.gsp:
+
+    <html>
+       <head>
+          <g:layoutTitle/>
+          <r:layoutResources/>
+       </head>
+       <body>
+          <g:layoutBody/>
+          <r:layoutResources/>
+       </body>
+    </html>
+
+
+Config.groovy
 -------------
 
-Fix grails taglib g:paginate to work with bootstrap css. 
+Fix grails taglib g:paginate to work with bootstrap css.
  
     grails.plugins.twitterbootstrap.fixtaglib = true
     
 Control plugin resources bundling.
 
+    Configuration key:
     grails.plugins.twitterbootstrap.defaultBundle
+
+    Configuration values:
         'bundle_name': bundle resources using bundle name
         false: disable bundling
-        default: 'bundle_bootstrap'
+        default value: 'bundle_bootstrap'
+
+Example in grails-app/conf/Config.groovy:
+
+    grails.plugins.twitterbootstrap {
+        fixtaglib = true
+        defaultBundle = 'bundle_bootstrap'
+    }
 
 Logging
 -------

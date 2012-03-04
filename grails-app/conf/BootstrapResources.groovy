@@ -174,7 +174,7 @@ modules = {
         } else {
             dependsOn 'bootstrap-css'
         }
-        dependsOn 'bootstrap-responsive-css,bootstrap-js'
+        dependsOn 'bootstrap-js'
     }
        
 }
