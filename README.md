@@ -78,6 +78,21 @@ Your grails-app/views/layouts/main.gsp:
     </html>
 
 
+Customize twitter-bootstrap
+---------------------------
+
+Run script copy-twitterbootstrap with dir name to make copy of original bootstrap less files:
+
+    $ grails copy-twitterbootstrap twitterbootstrap
+
+It copy original less files to 'web-app/twitterbootstrap'. Any file in this dir will override original file.
+Now, you can customize variables.less in 'web-app/twitterbootstrap'.
+
+To activate custom less files, add line to grails-app/conf/Config.groovy:
+
+    grails.plugins.twitterbootstrap.customDir = 'twitterbootstrap'
+
+
 Config.groovy
 -------------
 
@@ -97,10 +112,8 @@ Control plugin resources bundling.
 
 Example in grails-app/conf/Config.groovy:
 
-    grails.plugins.twitterbootstrap {
-        fixtaglib = true
-        defaultBundle = 'bundle_bootstrap'
-    }
+    grails.plugins.twitterbootstrap.fixtaglib = true
+    grails.plugins.twitterbootstrap.defaultBundle = 'bundle_bootstrap'
 
 Logging
 -------
@@ -114,6 +127,9 @@ Versioning
 
 History
 -------
+
+2.0.1.20
+    Added support for custom less files
 
 2.0.1.17
     Upgrade to twitter bootstrap v2.0.1.
