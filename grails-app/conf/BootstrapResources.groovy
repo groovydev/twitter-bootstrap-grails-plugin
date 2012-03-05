@@ -4,16 +4,44 @@ def dev = grails.util.GrailsUtil.isDevelopmentEnv()
 def applicationContext = org.codehaus.groovy.grails.commons.ApplicationHolder.application.mainContext
 def lesscssPlugin = applicationContext.pluginManager.getGrailsPlugin('lesscss-resources')
 def jqueryPlugin = applicationContext.pluginManager.getGrailsPlugin('jquery')
+def twitterbootstrapPlugin = applicationContext.pluginManager.getGrailsPlugin('twitter-bootstrap')
 def configTagLib = org.codehaus.groovy.grails.commons.ApplicationHolder.application.config.grails.plugins.twitterbootstrap.fixtaglib
-def configDefaultBundle = org.codehaus.groovy.grails.commons.ApplicationHolder.application.config.grails.plugins.twitterbootstrap.defaultBundle 
+def configDefaultBundle = org.codehaus.groovy.grails.commons.ApplicationHolder.application.config.grails.plugins.twitterbootstrap.defaultBundle
 if (!configDefaultBundle && !configDefaultBundle.equals(false)) {
     configDefaultBundle = 'bundle_bootstrap'
 }
+
+def ant = new AntBuilder()
+def configCustomDir = org.codehaus.groovy.grails.commons.ApplicationHolder.application.config.grails.plugins.twitterbootstrap.customDir
+def twitterbootstrapPluginDir = applicationContext.getResource(twitterbootstrapPlugin.pluginPath).file
+def dirLessSource = new File(twitterbootstrapPluginDir, 'less')
+def dirTarget = new File(twitterbootstrapPluginDir, 'work')
+
+log.debug "twitterbootstrapPluginDir: ${twitterbootstrapPluginDir}"
+log.debug "configCustomDir: ${configCustomDir}"
+log.debug "dirLessSource: ${dirLessSource}"
+log.debug "dirTarget: ${dirTarget}"
+
+ant.mkdir(dir: dirTarget)
+ant.copy(todir: dirTarget, overwrite: true) {
+    fileset(dir: dirLessSource)
+}
+
+if (configCustomDir) {
+    def dirCustomSource = applicationContext.getResource(configCustomDir).file.absolutePath
+    log.debug "dirCustomSource: ${dirCustomSource}"
+    ant.copy(todir: dirTarget, overwrite: true) {
+        fileset(dir: dirCustomSource)
+    }
+}
+
 def cssFile = "bootstrap.css"
 def cssminFile = "bootstrap.min.css"
 
 log.debug "config: grails.plugins.twitterbootstrap.fixtaglib = ${configTagLib}"
 log.debug "config: grails.plugins.twitterbootstrap.defaultBundle = ${configDefaultBundle}"
+
+log.debug "${applicationContext.getResource(twitterbootstrapPlugin?.pluginPath)}"
 log.debug "is lesscss-resources plugin loaded? ${!!lesscssPlugin}"
 log.debug "is jquery plugin loaded? ${!!jqueryPlugin}"
 
@@ -164,7 +192,7 @@ modules = {
         if (configTagLib) {
             dependsOn 'bootstrap-fixtaglib'
         }
-        resource id:'bootstrap-less', url:[plugin: 'twitter-bootstrap', dir: 'less', file: 'bootstrap.less'], attrs:[rel: "stylesheet/less", type:'css'], disposition: 'head'
+        resource id:'bootstrap-less', url:[plugin: 'twitter-bootstrap', dir: 'work', file: 'bootstrap.less'], attrs:[rel: "stylesheet/less", type:'css'], disposition: 'head'
     }
 
     bootstrap {
