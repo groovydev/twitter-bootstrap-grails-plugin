@@ -1,3 +1,5 @@
+import org.apache.commons.io.FileUtils
+
 def log = org.apache.log4j.Logger.getLogger('grails.plugins.twitterbootstrap.BootstrapResources')
 def dev = grails.util.GrailsUtil.isDevelopmentEnv()
 
@@ -11,8 +13,7 @@ if (!configDefaultBundle && !configDefaultBundle.equals(false)) {
     configDefaultBundle = 'bundle_bootstrap'
 }
 
-def ant = new AntBuilder()
-def configCustomDir = org.codehaus.groovy.grails.commons.ApplicationHolder.application.config.grails.plugins.twitterbootstrap.customDir
+def configCustomDir = org.codehaus.groovy.grails.commons.ApplicationHolder.application.config.grails.plugins.twitterbootstrap.customDir ?: 'less'
 def twitterbootstrapPluginDir = applicationContext.getResource(twitterbootstrapPlugin.pluginPath).file
 def dirLessSource = new File(twitterbootstrapPluginDir, 'less')
 def dirTarget = new File(twitterbootstrapPluginDir, 'work')
@@ -22,17 +23,13 @@ log.debug "configCustomDir: ${configCustomDir}"
 log.debug "dirLessSource: ${dirLessSource}"
 log.debug "dirTarget: ${dirTarget}"
 
-ant.mkdir(dir: dirTarget)
-ant.copy(todir: dirTarget, overwrite: true) {
-    fileset(dir: dirLessSource)
-}
+FileUtils.forceMkdir(dirTarget)
+FileUtils.copyDirectory(dirLessSource, dirTarget)
 
 if (configCustomDir) {
-    def dirCustomSource = applicationContext.getResource(configCustomDir).file.absolutePath
+    def dirCustomSource = applicationContext.getResource(configCustomDir).file
     log.debug "dirCustomSource: ${dirCustomSource}"
-    ant.copy(todir: dirTarget, overwrite: true) {
-        fileset(dir: dirCustomSource)
-    }
+    FileUtils.copyDirectory(dirCustomSource, dirTarget)
 }
 
 def cssFile = "bootstrap.css"
@@ -41,7 +38,6 @@ def cssminFile = "bootstrap.min.css"
 log.debug "config: grails.plugins.twitterbootstrap.fixtaglib = ${configTagLib}"
 log.debug "config: grails.plugins.twitterbootstrap.defaultBundle = ${configDefaultBundle}"
 
-log.debug "${applicationContext.getResource(twitterbootstrapPlugin?.pluginPath)}"
 log.debug "is lesscss-resources plugin loaded? ${!!lesscssPlugin}"
 log.debug "is jquery plugin loaded? ${!!jqueryPlugin}"
 

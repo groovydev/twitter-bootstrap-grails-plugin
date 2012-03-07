@@ -1,4 +1,4 @@
-<plugin name='twitter-bootstrap' version='2.0.1.20' grailsVersion='1.3.7 &gt; *'>
+<plugin name='twitter-bootstrap' version='2.0.1.21' grailsVersion='2.0.1 &gt; *'>
   <author>Karol Balejko</author>
   <authorEmail>kb@groovydev.org</authorEmail>
   <title>Plugin Twitter Bootstrap CSS framework resource files</title>
@@ -7,16 +7,51 @@ Bootstrap is Twitter's toolkit for kickstarting CSS for websites, apps, and more
 To get started -- checkout http://twitter.github.com/bootstrap!
 </description>
   <documentation>https://github.com/groovydev/twitter-bootstrap-grails-plugin/blob/master/README.md</documentation>
+  <type>TwitterBootstrapGrailsPlugin</type>
   <resources>
     <resource>BootstrapResources</resource>
-    <resource>BuildConfig</resource>
-    <resource>Config</resource>
-    <resource>DataSource</resource>
-    <resource>UrlMappings</resource>
     <resource>org.groovydev.TwitterBootstrapTagLib</resource>
   </resources>
+  <repositories>
+    <repository name='grailsCentral' url='http://plugins.grails.org' />
+    <repository name='http://repo.grails.org/grails/plugins' url='http://repo.grails.org/grails/plugins/' />
+    <repository name='http://repo.grails.org/grails/core' url='http://repo.grails.org/grails/core/' />
+    <repository name='grailsCore' url='http://svn.codehaus.org/grails/trunk/grails-plugins' />
+    <repository name='https://repository.apache.org/content/repositories/releases/' url='https://repository.apache.org/content/repositories/releases/' />
+    <repository name='http://maven.restlet.org/' url='http://maven.restlet.org/' />
+  </repositories>
   <dependencies>
-    <plugin name='resources' version='1.0 &gt; *' />
+    <compile>
+      <dependency group='org.apache.camel' name='camel-mail' version='2.8.3' />
+      <dependency group='org.scribe' name='scribe' version='1.3.0' />
+      <dependency group='org.apache.camel' name='camel-cache' version='2.8.3' />
+      <dependency group='org.apache.camel' name='camel-restlet' version='2.8.3' />
+      <dependency group='org.apache.camel' name='camel-groovy' version='2.8.3' />
+      <dependency group='org.apache.camel' name='camel-script' version='2.8.3' />
+      <dependency group='org.apache.camel' name='camel-stream' version='2.8.3' />
+      <dependency group='org.apache.camel' name='components' version='2.8.3' />
+      <dependency group='org.apache.camel' name='camel-spring-security' version='2.8.3' />
+      <dependency group='org.apache.camel' name='camel-http' version='2.8.3' />
+      <dependency group='org.apache.camel' name='camel-hazelcast' version='2.8.3' />
+    </compile>
+    <runtime>
+      <dependency group='postgresql' name='postgresql' version='9.0-801.jdbc4' />
+    </runtime>
   </dependencies>
+  <plugins>
+    <compile>
+      <plugin group='org.grails.plugins' name='jquery' version='latest.integration' />
+      <plugin group='org.grails.plugins' name='spring-security-core' version='latest.integration' />
+      <plugin group='org.grails.plugins' name='resources' version='latest.integration' />
+      <plugin group='org.grails.plugins' name='lesscss-resources' version='latest.integration' />
+    </compile>
+    <runtime>
+      <plugin group='org.grails.plugins' name='svn' version='1.0.2' />
+      <plugin group='org.grails.plugins' name='webxml' version='1.4.1' />
+      <plugin group='org.grails.plugins' name='tomcat' version='2.0.1' />
+      <plugin group='org.grails.plugins' name='hibernate' version='2.0.1' />
+    </runtime>
+  </plugins>
+  <runtimePluginRequirements />
   <behavior />
 </plugin>

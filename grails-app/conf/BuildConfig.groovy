@@ -20,5 +20,7 @@ grails.project.dependency.resolution = {
             export = false
         }
     }
-    dependencies { }
+    dependencies {
+        compile 'commons-io:commons-io:2.1'
+    }
 }
