@@ -27,9 +27,13 @@ FileUtils.forceMkdir(dirTarget)
 FileUtils.copyDirectory(dirLessSource, dirTarget)
 
 if (configCustomDir) {
-    def dirCustomSource = applicationContext.getResource(configCustomDir).file
-    log.debug "dirCustomSource: ${dirCustomSource}"
-    FileUtils.copyDirectory(dirCustomSource, dirTarget)
+    try {
+        def dirCustomSource = applicationContext.getResource(configCustomDir).file
+        log.debug "dirCustomSource: ${dirCustomSource}"
+        FileUtils.copyDirectory(dirCustomSource, dirTarget)
+    } catch (Exception e) {
+        log.debug "Cannot find resource ${configCustomDir}", e
+    }
 }
 
 def cssFile = "bootstrap.css"
