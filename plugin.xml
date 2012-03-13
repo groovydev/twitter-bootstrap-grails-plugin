@@ -1,6 +1,6 @@
-<plugin name='twitter-bootstrap' version='2.0.1.21' grailsVersion='1.3.7 &gt; *'>
+<plugin name='twitter-bootstrap' version='2.0.1.22' grailsVersion='1.3.7 &gt; *'>
   <author>Karol Balejko</author>
-  <authorEmail>kb@groovydev.org</authorEmail>
+  <authorEmail>kb@groovydev.com</authorEmail>
   <title>Plugin Twitter Bootstrap CSS framework resource files</title>
   <description>Provides Twitter Bootstrap CSS framework resource files.
 Bootstrap is Twitter's toolkit for kickstarting CSS for websites, apps, and more. It includes base CSS styles for typography, forms, buttons, tables, grids, navigation, alerts, and more.
