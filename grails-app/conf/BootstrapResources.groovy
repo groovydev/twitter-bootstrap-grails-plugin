@@ -14,27 +14,38 @@ if (!configDefaultBundle && !configDefaultBundle.equals(false)) {
 }
 
 def configCustomDir = org.codehaus.groovy.grails.commons.ApplicationHolder.application.config.grails.plugins.twitterbootstrap.customDir ?: 'less'
-def twitterbootstrapPluginDir = applicationContext.getResource(twitterbootstrapPlugin.pluginPath).file
-def dirLessSource = new File(twitterbootstrapPluginDir, 'less')
-def dirTarget = new File(twitterbootstrapPluginDir, 'work')
+def twitterbootstrapPluginDir
+
+def dirLessSource  
+def dirTarget 
+
+try {
+	twitterbootstrapPluginDir = applicationContext.getResource(twitterbootstrapPlugin.pluginPath).file
+	dirLessSource = new File(twitterbootstrapPluginDir, 'less')
+ 	dirTarget = new File(twitterbootstrapPluginDir, 'work')
+	FileUtils.forceMkdir(dirTarget)
+	FileUtils.copyDirectory(dirLessSource, dirTarget)
+
+    if (configCustomDir) {
+    	try {
+        	def dirCustomSource = applicationContext.getResource(configCustomDir).file
+        	log.debug "dirCustomSource: ${dirCustomSource}"
+         	FileUtils.copyDirectory(dirCustomSource, dirTarget)
+     	} catch (Exception e) {
+         	log.debug "Cannot find resource ${configCustomDir}", e
+     	}
+	}
+
+} catch (java.io.FileNotFoundException ex) {
+	log.warn "Can't find resource ${twitterbootstrapPlugin.pluginPath}"
+}
+
 
 log.debug "twitterbootstrapPluginDir: ${twitterbootstrapPluginDir}"
 log.debug "configCustomDir: ${configCustomDir}"
 log.debug "dirLessSource: ${dirLessSource}"
 log.debug "dirTarget: ${dirTarget}"
 
-FileUtils.forceMkdir(dirTarget)
-FileUtils.copyDirectory(dirLessSource, dirTarget)
-
-if (configCustomDir) {
-    try {
-        def dirCustomSource = applicationContext.getResource(configCustomDir).file
-        log.debug "dirCustomSource: ${dirCustomSource}"
-        FileUtils.copyDirectory(dirCustomSource, dirTarget)
-    } catch (Exception e) {
-        log.debug "Cannot find resource ${configCustomDir}", e
-    }
-}
 
 def cssFile = "bootstrap.css"
 def cssminFile = "bootstrap.min.css"
