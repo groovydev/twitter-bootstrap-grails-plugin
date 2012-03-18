@@ -1,5 +1,5 @@
 /* ===================================================
- * bootstrap-transition.js v2.0.1
+ * bootstrap-transition.js v2.0.2
  * http://twitter.github.com/bootstrap/javascript.html#transitions
  * ===================================================
  * Copyright 2012 Twitter, Inc.
@@ -19,33 +19,33 @@
 
 !function( $ ) {
 
-    $(function () {
+  $(function () {
 
-        "use strict"
+    "use strict"
 
-        /* CSS TRANSITION SUPPORT (https://gist.github.com/373874)
-         * ======================================================= */
+    /* CSS TRANSITION SUPPORT (https://gist.github.com/373874)
+     * ======================================================= */
 
-        $.support.transition = (function () {
-            var thisBody = document.body || document.documentElement
-                , thisStyle = thisBody.style
-                , support = thisStyle.transition !== undefined || thisStyle.WebkitTransition !== undefined || thisStyle.MozTransition !== undefined || thisStyle.MsTransition !== undefined || thisStyle.OTransition !== undefined
+    $.support.transition = (function () {
+      var thisBody = document.body || document.documentElement
+        , thisStyle = thisBody.style
+        , support = thisStyle.transition !== undefined || thisStyle.WebkitTransition !== undefined || thisStyle.MozTransition !== undefined || thisStyle.MsTransition !== undefined || thisStyle.OTransition !== undefined
 
-            return support && {
-                end: (function () {
-                    var transitionEnd = "TransitionEnd"
-                    if ( $.browser.webkit ) {
-                        transitionEnd = "webkitTransitionEnd"
-                    } else if ( $.browser.mozilla ) {
-                        transitionEnd = "transitionend"
-                    } else if ( $.browser.opera ) {
-                        transitionEnd = "oTransitionEnd"
-                    }
-                    return transitionEnd
-                }())
-            }
-        })()
+      return support && {
+        end: (function () {
+          var transitionEnd = "TransitionEnd"
+          if ( $.browser.webkit ) {
+          	transitionEnd = "webkitTransitionEnd"
+          } else if ( $.browser.mozilla ) {
+          	transitionEnd = "transitionend"
+          } else if ( $.browser.opera ) {
+          	transitionEnd = "oTransitionEnd"
+          }
+          return transitionEnd
+        }())
+      }
+    })()
 
-    })
+  })
 
 }( window.jQuery );
