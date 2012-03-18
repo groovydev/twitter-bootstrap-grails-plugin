@@ -90,9 +90,9 @@ class TwitterBootstrapTagLib {
         }
         else {
             writer << '<li class="prev disabled">'
-            writer << link(linkTagAttrs.clone()) {
-                (attrs.prev ?: messageSource.getMessage('paginate.prev', null, messageSource.getMessage('default.paginate.prev', null, 'Previous', locale), locale))
-            }
+            writer << '<span>'
+            writer << (attrs.prev ?: messageSource.getMessage('paginate.prev', null, messageSource.getMessage('default.paginate.prev', null, 'Previous', locale), locale))
+            writer << '</span>'
             writer << '</li>'
         }
 
@@ -122,14 +122,14 @@ class TwitterBootstrapTagLib {
                 writer << '<li>'
                 writer << link(linkTagAttrs.clone()) {firststep.toString()}
                 writer << '</li>'
-                writer << '<li class="disabled"><a href="#">...</a></li>'
+                writer << '<li class="disabled"><span>...</span></li>'
             }
 
             // display paginate steps
             (beginstep..endstep).each { i ->
                 if (currentstep == i) {
                     writer << "<li class=\"active\">"
-                    writer << link(linkTagAttrs.clone()) {i.toString()}
+		    writer << "<span>${i}</span>"
                     writer << "</li>";
                 }
                 else {
@@ -142,7 +142,7 @@ class TwitterBootstrapTagLib {
 
             // display laststep link when endstep is not laststep
             if (endstep < laststep) {
-                writer << '<li class="disabled"><a href="#">...</a></li>'
+                writer << '<li class="disabled"><span>...</span></li>'
                 linkParams.offset = (laststep -1) * max
                 writer << '<li>'
                 writer << link(linkTagAttrs.clone()) { laststep.toString() }
@@ -162,9 +162,9 @@ class TwitterBootstrapTagLib {
         else {
             linkParams.offset = offset + max
             writer << '<li class="next disabled">'
-            writer << link(linkTagAttrs.clone()) {
-                (attrs.next ? attrs.next : messageSource.getMessage('paginate.next', null, messageSource.getMessage('default.paginate.next', null, 'Next', locale), locale))
-            }
+            writer << '<span>'
+            writer << (attrs.next ? attrs.next : messageSource.getMessage('paginate.next', null, messageSource.getMessage('default.paginate.next', null, 'Next', locale), locale))
+            writer << '</span>'
             writer << '</li>'
         }
 
