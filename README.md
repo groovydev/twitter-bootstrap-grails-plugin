@@ -131,6 +131,9 @@ Versioning
 History
 -------
 
+2.0.1.23
+    upgrade bootstrap to 2.0.2 and add some minor taglib fixes
+
 2.0.1.21
     Added support for custom less files
 
