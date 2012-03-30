@@ -33,11 +33,10 @@ You must use the Grails resources framework to make use of this plugin. The reso
 
     bootstrap - all bootstrap css (or less) and javascript resources 
 
-Note 
+Note
 -----
-A bootstrap resource depends on bootstrap-css and bootstrap-js. 
-In case of lesscss-resources plugin is installed, bootstrap resource depends on bootstrap-less and bootstrap-js.   
-
+A bootstrap resource depends on bootstrap-css and bootstrap-js.
+If less-resources plugin is installed, bootstrap resource depends on bootstrap-less and bootstrap-js.
 To use responsive css, you have to declare bootstrap-responsive-css.
 
 Usage
@@ -77,6 +76,13 @@ Your grails-app/views/layouts/main.gsp:
        </body>
     </html>
 
+Using LESS bootstrap
+--------------------
+If you need customize bootstrap, you cannot use precompiled CSS resource files. You need to use LESS bootstrap files and LESS resource mapper.
+You can use less-resources plugin. It supports latest bootstrap and integrates fully with plugin.
+
+http://grails.org/plugin/less-resources
+
 
 Customize twitter-bootstrap
 ---------------------------
@@ -84,17 +90,24 @@ Customize twitter-bootstrap
 To use custom bootstrap less, you need copy custom files to 'web-app/less'. Any file in this
 directory will override original bootstrap. Usually, one customize variables.less in 'web-app/less'.
 
-To checkout all original less files, run helper script copy-twitterbootstrap with destination dir name as argument:
+Add custom-bootstrap.less file to /web-app/less/ directory:
 
-    $ grails copy-twitterbootstrap less
+    @import "bootstrap.less";
 
-It will copy original less files to 'web-app/less'.
+Add 'custom-bootstrap' resource module to Config.groovy:
 
-If you need to change default 'web-app/less' directory, add this line to grails-app/conf/Config.groovy:
+    grails.resources.modules = {
 
-      grails.plugins.twitterbootstrap.customDir = 'custom-dir'
+        'custom-bootstrap' {
+            dependsOn 'bootstrap'
+            resource url:[dir: 'less', file: 'custom-bootstrap.less'], attrs:[rel: "stylesheet/less", type:'css']
+        }
 
-It will point to 'web-app/custom-dir'
+    }
+
+Prepare customized variables.less file and copy to /web-app/less/ directory. You can use original variables.less
+as base file (https://github.com/twitter/bootstrap/blob/v2.0.2/less/variables.less).
+
 
 Config.groovy
 -------------
@@ -131,8 +144,11 @@ Versioning
 History
 -------
 
-2.0.1.23
-    upgrade bootstrap to 2.0.2 and add some minor taglib fixes
+2.0.1.24
+    Upgrade bootstrap to v2.0.2 and add some minor taglib fixes
+    Added support for less-resources plugin, in order to compile bootstrap v2.0.2
+    Improved less customization
+    Deprecated copy-twitterbootstrap script
 
 2.0.1.21
     Added support for custom less files

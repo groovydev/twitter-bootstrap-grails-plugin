@@ -1,51 +1,21 @@
-import org.apache.commons.io.FileUtils
 
 def log = org.apache.log4j.Logger.getLogger('grails.plugins.twitterbootstrap.BootstrapResources')
 def dev = grails.util.GrailsUtil.isDevelopmentEnv()
 
 def applicationContext = org.codehaus.groovy.grails.commons.ApplicationHolder.application.mainContext
-def lesscssPlugin = applicationContext.pluginManager.getGrailsPlugin('lesscss-resources')
+def lesscssPlugin = applicationContext.pluginManager.getGrailsPlugin('lesscss-resources') || applicationContext.pluginManager.getGrailsPlugin('less-resources')
 def jqueryPlugin = applicationContext.pluginManager.getGrailsPlugin('jquery')
-def twitterbootstrapPlugin = applicationContext.pluginManager.getGrailsPlugin('twitter-bootstrap')
 def configTagLib = org.codehaus.groovy.grails.commons.ApplicationHolder.application.config.grails.plugins.twitterbootstrap.fixtaglib
 def configDefaultBundle = org.codehaus.groovy.grails.commons.ApplicationHolder.application.config.grails.plugins.twitterbootstrap.defaultBundle
 if (!configDefaultBundle && !configDefaultBundle.equals(false)) {
     configDefaultBundle = 'bundle_bootstrap'
 }
 
-def configCustomDir = org.codehaus.groovy.grails.commons.ApplicationHolder.application.config.grails.plugins.twitterbootstrap.customDir ?: 'less'
-def twitterbootstrapPluginDir
-
-def dirLessSource  
+def dirLessSource
 def dirTarget 
 
-try {
-	twitterbootstrapPluginDir = applicationContext.getResource(twitterbootstrapPlugin.pluginPath).file
-	dirLessSource = new File(twitterbootstrapPluginDir, 'less')
- 	dirTarget = new File(twitterbootstrapPluginDir, 'work')
-	FileUtils.forceMkdir(dirTarget)
-	FileUtils.copyDirectory(dirLessSource, dirTarget)
-
-    if (configCustomDir) {
-    	try {
-        	def dirCustomSource = applicationContext.getResource(configCustomDir).file
-        	log.debug "dirCustomSource: ${dirCustomSource}"
-         	FileUtils.copyDirectory(dirCustomSource, dirTarget)
-     	} catch (Exception e) {
-         	log.debug "Cannot find resource ${configCustomDir}", e
-     	}
-	}
-
-} catch (java.io.FileNotFoundException ex) {
-	log.warn "Can't find resource ${twitterbootstrapPlugin.pluginPath}"
-}
-
-
-log.debug "twitterbootstrapPluginDir: ${twitterbootstrapPluginDir}"
-log.debug "configCustomDir: ${configCustomDir}"
 log.debug "dirLessSource: ${dirLessSource}"
 log.debug "dirTarget: ${dirTarget}"
-
 
 def cssFile = "bootstrap.css"
 def cssminFile = "bootstrap.min.css"
@@ -203,7 +173,7 @@ modules = {
         if (configTagLib) {
             dependsOn 'bootstrap-fixtaglib'
         }
-        resource id:'bootstrap-less', url:[plugin: 'twitter-bootstrap', dir: 'work', file: 'bootstrap.less'], attrs:[rel: "stylesheet/less", type:'css'], disposition: 'head'
+        resource id:'bootstrap-less', url:[plugin: 'twitter-bootstrap', dir: 'less', file: 'bootstrap.less'], attrs:[rel: "stylesheet/less", type:'css', order:100], disposition: 'head'
     }
 
     bootstrap {
