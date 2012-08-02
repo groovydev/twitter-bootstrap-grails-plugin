@@ -72,13 +72,18 @@ class TwitterBootstrapTagLib {
         }
         linkTagAttrs.params = linkParams
 
+        def cssClasses = "pagination"
+        if (attrs.class) {
+            cssClasses = "pagination " + attrs.class
+        }
+
         // determine paging variables
         def steps = maxsteps > 0
         int currentstep = (offset / max) + 1
         int firststep = 1
         int laststep = Math.round(Math.ceil(total / max))
 
-        writer << '<div class="pagination"><ul>'
+        writer << "<div class=\"${cssClasses}\"><ul>"
         // display previous link when not on firststep
         if (currentstep > firststep) {
             linkParams.offset = offset - max
