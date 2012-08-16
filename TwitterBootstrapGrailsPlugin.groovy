@@ -1,4 +1,3 @@
-import org.apache.log4j.Logger
 import org.groovydev.TwitterBootstrapTagLib
 
 class TwitterBootstrapGrailsPlugin {
