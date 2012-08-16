@@ -1,7 +1,8 @@
 .settings
 .svn
 target
-web-app/WEB-INF/classes
+web-app/WEB-INF/
 *.iml
 *.ipr
 *.iws
+.idea/
