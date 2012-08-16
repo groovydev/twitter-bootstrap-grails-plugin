@@ -144,6 +144,9 @@ Versioning
 History
 -------
 
+2.0.4
+	Upgraded Bootstrap to v2.0.4 and Grails to 2.1.0
+
 2.0.1.24
     Upgrade bootstrap to v2.0.2 and add some minor taglib fixes
     Added support for less-resources plugin, in order to compile bootstrap v2.0.2
