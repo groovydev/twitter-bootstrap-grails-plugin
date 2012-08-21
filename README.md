@@ -18,6 +18,7 @@ You must use the Grails resources framework to make use of this plugin. The reso
     bootstrap-responsive-css - bootstrap responsive css resource
 
     bootstrap-alert - bootstrap alerts javascript resource
+    bootstrap-affix - bootstrap affix javascript resource
     bootstrap-dropdown - bootstrap dropdown javascript resource
     bootstrap-modal - bootstrap modal javascript resource
     bootstrap-popover - bootstrap popover javascript resource

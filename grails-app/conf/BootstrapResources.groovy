@@ -59,7 +59,16 @@ modules = {
         resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-alert.js']
     }
 
-    'bootstrap-dropdown' {
+	'bootstrap-affix' {
+		defaultBundle configDefaultBundle
+		if (jqueryPlugin) {
+			dependsOn "jquery"
+		}
+
+		resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-affix.js']
+	}
+
+	'bootstrap-dropdown' {
         defaultBundle configDefaultBundle
         if (jqueryPlugin) {
             dependsOn 'jquery'
@@ -160,12 +169,12 @@ modules = {
         resource url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-transition.js']
     }
 
-    'bootstrap-js' {
+	'bootstrap-js' {
         defaultBundle configDefaultBundle
         if (jqueryPlugin) {
             dependsOn 'jquery'
         }
-        dependsOn 'bootstrap-transition,bootstrap-alert,bootstrap-dropdown,bootstrap-modal,bootstrap-scrollspy,bootstrap-tab,bootstrap-tooltip,bootstrap-popover,bootstrap-button,bootstrap-carousel,bootstrap-typeahead,bootstrap-collapse'
+        dependsOn 'bootstrap-transition,bootstrap-alert,bootstrap-dropdown,bootstrap-modal,bootstrap-scrollspy,bootstrap-tab,bootstrap-tooltip,bootstrap-popover,bootstrap-button,bootstrap-carousel,bootstrap-typeahead,bootstrap-collapse,bootstrap-affix'
     }
 
     'bootstrap-less' {
