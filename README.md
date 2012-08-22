@@ -144,6 +144,9 @@ Versioning
 
 History
 -------
+2.1.0
+	Upgraded Bootstrap to 2.1.0.
+	Removed grails-style scaffolding
 
 2.0.4
 	Upgraded Bootstrap to v2.0.4 and Grails to 2.1.0
