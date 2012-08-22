@@ -29,7 +29,7 @@ log.debug "is jquery plugin loaded? ${!!jqueryPlugin}"
 modules = {
 
     'bootstrap-fixtaglib' {
-        defaultBundle configDefaultBundle
+        defaultBundle 'fixtaglib'
         
         resource url:[plugin: 'twitter-bootstrap', dir: 'css', file: 'bootstrap-fixtaglib.css'], disposition: 'head'
     }
