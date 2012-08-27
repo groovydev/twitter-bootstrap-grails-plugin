@@ -144,6 +144,9 @@ Versioning
 
 History
 -------
+2.1.0.1
+	Fixed resources dependency
+	
 2.1.0
 	Upgraded Bootstrap to 2.1.0.
 	Removed grails-style scaffolding
