@@ -70,6 +70,11 @@ class TwitterBootstrapTagLib {
         if (attrs.fragment != null) {
             linkTagAttrs.fragment = attrs.fragment
         }
+        //add the mapping attribute if present
+        if (attrs.mapping) {
+            linkTagAttrs.mapping = attrs.mapping
+        }
+
         linkTagAttrs.params = linkParams
 
         def cssClasses = "pagination"
