@@ -135,7 +135,7 @@ Example in grails-app/conf/Config.groovy:
 
 Example
 -------
-There is an [example grails project]:(/robfletcher/twitter-bootstrap-scaffolding) that provides scaffolded views.robfletcher/twitter-bootstrap-scaffolding
+There is an [example grails project](/robfletcher/twitter-bootstrap-scaffolding) that provides scaffolded views.robfletcher/twitter-bootstrap-scaffolding
 
 Logging
 -------
