@@ -144,6 +144,9 @@ Versioning
 
 History
 -------
+2.2.2
+	Upgraded Bootstrap to 2.2.2.
+
 2.2.1
 	Upgraded Bootstrap to 2.2.1.
 
