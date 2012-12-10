@@ -132,11 +132,17 @@ Example in grails-app/conf/Config.groovy:
     grails.plugins.twitterbootstrap.fixtaglib = true
     grails.plugins.twitterbootstrap.defaultBundle = 'bundle_bootstrap'
 
+
+Example
+-------
+There is an [example grails project](/robfletcher/twitter-bootstrap-scaffolding) that provides scaffolded views.robfletcher/twitter-bootstrap-scaffolding
+
 Logging
 -------
 
     grails.plugins.twitterbootstrap - log category
-    
+
+
 Versioning
 ----------
 
@@ -145,6 +151,7 @@ Versioning
 History
 -------
 2.2.2
+    Fixed #50 and #51. Pagination now supports the mapping attribute and the plugin should no longer include the old grails style.
 	Upgraded Bootstrap to 2.2.2.
 
 2.2.1
