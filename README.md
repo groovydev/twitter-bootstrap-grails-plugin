@@ -150,8 +150,9 @@ Versioning
 
 History
 -------
-2.2.1.1
-    Fixed #50 and #51. Pagination now supports the mapping attribute and does no longer use the old grails style.
+2.2.2
+    Fixed #50 and #51. Pagination now supports the mapping attribute and the plugin should no longer include the old grails style.
+	Upgraded Bootstrap to 2.2.2.
 
 2.2.1
 	Upgraded Bootstrap to 2.2.1.
