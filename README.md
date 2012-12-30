@@ -32,7 +32,7 @@ You must use the Grails resources framework to make use of this plugin. The reso
     bootstrap-transition - bootstrap transition javascript resource
     bootstrap-less - bootstrap less resource
 
-    bootstrap - all bootstrap css (or less) and javascript resources 
+    bootstrap - all bootstrap css (or less) and javascript resources (but responsive)
 
 Note
 -----
