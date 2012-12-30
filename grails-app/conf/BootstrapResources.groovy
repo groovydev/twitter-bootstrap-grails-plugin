@@ -1,4 +1,3 @@
-
 def log = org.apache.log4j.Logger.getLogger('grails.plugins.twitterbootstrap.BootstrapResources')
 def dev = grails.util.GrailsUtil.isDevelopmentEnv()
 
@@ -49,6 +48,12 @@ modules = {
 
         resource url:[plugin: 'twitter-bootstrap', dir: 'css', file: (dev ? 'bootstrap-responsive.css' : 'bootstrap-responsive.min.css')], disposition: 'head', exclude:'minify'
     }
+    
+    'bootstrap-responsive-less' {
+	dependsOn 'bootstrap-less'
+	resource url:[plugin: 'twitter-bootstrap', dir: 'less', file: 'responsive.less'], attrs:[rel: "stylesheet/less", type:'css']
+    }
+
 
     'bootstrap-alert' {
         defaultBundle configDefaultBundle
