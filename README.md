@@ -66,7 +66,8 @@ Edit your Sitemesh layout
 
 Your grails-app/views/layouts/main.gsp:
 
-    <html>
+    <!DOCTYPE html>
+    <html lang="en">
        <head>
           <g:layoutTitle/>
           <r:layoutResources/>
