@@ -39,7 +39,7 @@ modules = {
             dependsOn 'bootstrap-fixtaglib'
         }
         
-        resource url:[plugin: 'twitter-bootstrap', dir: 'css', file: (dev ? cssFile : cssminFile)], disposition: 'head', exclude:'minify'
+        resource id: 'bootstrap-css', url:[plugin: 'twitter-bootstrap', dir: 'css', file: (dev ? cssFile : cssminFile)], disposition: 'head', exclude:'minify'
     }
 
     'bootstrap-responsive-css' {
