@@ -16,6 +16,7 @@ You must use the Grails resources framework to make use of this plugin. The reso
     bootstrap-css - all css resources (without responsive css)
 
     bootstrap-responsive-css - bootstrap responsive css resource
+    bootstrap-responsive-less - bootstrap responsive less resource (use one or the other)
 
     bootstrap-alert - bootstrap alerts javascript resource
     bootstrap-affix - bootstrap affix javascript resource
@@ -66,7 +67,8 @@ Edit your Sitemesh layout
 
 Your grails-app/views/layouts/main.gsp:
 
-    <html>
+    <!DOCTYPE html>
+    <html lang="en">
        <head>
           <g:layoutTitle/>
           <r:layoutResources/>
@@ -150,6 +152,8 @@ Versioning
 
 History
 -------
+2.3.0	Upgraded to Bootstrap 2.3.0
+
 2.2.2
     Fixed #50 and #51. Pagination now supports the mapping attribute and the plugin should no longer include the old grails style.
 	Upgraded Bootstrap to 2.2.2.
