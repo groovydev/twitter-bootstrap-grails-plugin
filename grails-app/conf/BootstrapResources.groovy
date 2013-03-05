@@ -1,4 +1,4 @@
-def log = org.apache.log4j.Logger.getLogger('grails.plugins.twitterbootstrap.BootstrapResources')
+def log = org.slf4j.LoggerFactory.getLogger('grails.plugins.twitterbootstrap.BootstrapResources')
 def dev = grails.util.GrailsUtil.isDevelopmentEnv()
 
 def applicationContext = org.codehaus.groovy.grails.commons.ApplicationHolder.application.mainContext
