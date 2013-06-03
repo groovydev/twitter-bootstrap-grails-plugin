@@ -137,7 +137,7 @@ Example in grails-app/conf/Config.groovy:
 
 Example
 -------
-There is an [example grails project](/robfletcher/twitter-bootstrap-scaffolding) that provides scaffolded views.robfletcher/twitter-bootstrap-scaffolding
+There is an [example grails project](http://github.com/robfletcher/twitter-bootstrap-scaffolding) that provides scaffolded views.robfletcher/twitter-bootstrap-scaffolding
 
 Logging
 -------
@@ -152,6 +152,8 @@ Versioning
 
 History
 -------
+2.3.1   Upgraded to Bootstrap 2.3.1
+
 2.3.0	Upgraded to Bootstrap 2.3.0
 
 2.2.2
