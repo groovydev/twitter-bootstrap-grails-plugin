@@ -13,9 +13,10 @@ grails.project.dependency.resolution = {
         grailsPlugins()
         grailsHome()
         grailsCentral()
+        mavenCentral()
     }
     plugins {
-        build(":release:2.0.4") { export = false }
+        build(":release:2.2.1") { export = false }
         runtime(":resources:1.1.6") { export = false }
     }
     dependencies {
