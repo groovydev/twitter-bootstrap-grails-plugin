@@ -153,52 +153,55 @@ Versioning
 History
 -------
 2.3.2
-    Upgraded to Bootstrap 2.3.2
+- Upgraded to Bootstrap 2.3.2
+    
 2.3.1
-    Upgraded to Bootstrap 2.3.1
+- Upgraded to Bootstrap 2.3.1
+    
 2.3.0
-    Upgraded to Bootstrap 2.3.0
+- Upgraded to Bootstrap 2.3.0
+    
 2.2.2
-    Fixed #50 and #51. Pagination now supports the mapping attribute and the plugin should no longer include the old grails style.
-	Upgraded Bootstrap to 2.2.2.
+- Fixed #50 and #51. Pagination now supports the mapping attribute and the plugin should no longer include the old grails style.
+- Upgraded Bootstrap to 2.2.2.
 
 2.2.1
-	Upgraded Bootstrap to 2.2.1.
+- Upgraded Bootstrap to 2.2.1.
 
 2.2.0
-	Upgraded Bootstrap to 2.2.0.
+- Upgraded Bootstrap to 2.2.0.
 
 2.1.1
-	Upgraded Bootstrap to 2.1.1.
+- Upgraded Bootstrap to 2.1.1.
 
 2.1.0.1
-	Fixed resources dependency
+- Fixed resources dependency
 	
 2.1.0
-	Upgraded Bootstrap to 2.1.0.
-	Removed grails-style scaffolding
+- Upgraded Bootstrap to 2.1.0.
+- Removed grails-style scaffolding
 
 2.0.4
-	Upgraded Bootstrap to v2.0.4 and Grails to 2.1.0
+- Upgraded Bootstrap to v2.0.4 and Grails to 2.1.0
 
 2.0.1.24
-    Upgrade bootstrap to v2.0.2 and add some minor taglib fixes
-    Added support for less-resources plugin, in order to compile bootstrap v2.0.2
-    Improved less customization
-    Deprecated copy-twitterbootstrap script
+- Upgrade bootstrap to v2.0.2 and add some minor taglib fixes
+- Added support for less-resources plugin, in order to compile bootstrap v2.0.2
+- Improved less customization
+- Deprecated copy-twitterbootstrap script
 
 2.0.1.21
-    Added support for custom less files
+- Added support for custom less files
 
 2.0.1.17
-    Upgrade to twitter bootstrap v2.0.1.
+- Upgrade to twitter bootstrap v2.0.1.
 
 2.0.0.15
-    Upgrade to twitter bootstrap v2.0.0.
+- Upgrade to twitter bootstrap v2.0.0.
 
 1.4.0.14
-    Latest stable plugin edition with twitter-bootstrap v1.4.0
-    Plugin documentation for v1.4.0.14 https://github.com/groovydev/twitter-bootstrap-grails-plugin/blob/v1.4.0.14/README.md
+- Latest stable plugin edition with twitter-bootstrap v1.4.0
+- Plugin documentation for v1.4.0.14 https://github.com/groovydev/twitter-bootstrap-grails-plugin/blob/v1.4.0.14/README.md
 
 Copyright and License
 ---------------------
