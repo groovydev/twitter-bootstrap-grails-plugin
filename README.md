@@ -35,6 +35,23 @@ You must use the Grails resources framework to make use of this plugin. The reso
 
     bootstrap - all bootstrap css (or less) and javascript resources, except bootstrap-responsive-css
 
+Asset-Pipeline
+--------------
+If using asset-pipeline instead you simply require the files in the top of your js files:
+
+app.js example:
+```javascript
+//=require bootstrap
+
+console.log("App code here");
+```
+
+app.css example:
+```css
+/*=require boostrap*/
+/*=require boostrap-responsive*/
+```
+
 Note
 -----
 A bootstrap resource depends on bootstrap-css and bootstrap-js.
@@ -116,9 +133,9 @@ Config.groovy
 -------------
 
 Fix grails taglib g:paginate to work with bootstrap css.
- 
+
     grails.plugins.twitterbootstrap.fixtaglib = true
-    
+
 Control plugin resources bundling.
 
     Configuration key:
@@ -154,13 +171,13 @@ History
 -------
 2.3.2
 - Upgraded to Bootstrap 2.3.2
-    
+
 2.3.1
 - Upgraded to Bootstrap 2.3.1
-    
+
 2.3.0
 - Upgraded to Bootstrap 2.3.0
-    
+
 2.2.2
 - Fixed #50 and #51. Pagination now supports the mapping attribute and the plugin should no longer include the old grails style.
 - Upgraded Bootstrap to 2.2.2.
@@ -176,7 +193,7 @@ History
 
 2.1.0.1
 - Fixed resources dependency
-	
+
 2.1.0
 - Upgraded Bootstrap to 2.1.0.
 - Removed grails-style scaffolding
@@ -226,9 +243,9 @@ twitter-bootstrap plugin:
 Twitter Bootstrap CSS files:
 
     Copyright 2011 Twitter, Inc.
-    
+
     Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
-    
+
     http://www.apache.org/licenses/LICENSE-2.0
-    
+
     Unless required by applicable law

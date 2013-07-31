@@ -1,0 +1,44 @@
+/* Fix Bootstrap Pagination Bug */
+.pagination span {
+  float: left;
+  padding: 0 14px;
+  line-height: 34px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-left-width: 0;
+}
+.pagination li:first-child span {
+  border-left-width: 1px;
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+}
+.pagination li:last-child span {
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+}
+.pagination .active span {
+  color: #999999;
+  cursor: default;
+}
+.pagination .active span {
+  background-color: #F5F5F5;
+}
+
+/* Table Sorting */
+th.asc a, th.desc a {
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+/* Date Picker CSS */
+select[name*='_day'], select[name*='_hour'], select[name*='_minute']  {
+    width:50px;
+}
+select[name*='_month'] {
+    width:100px;
+}
+select[name*='_year'] {
+    width:75px;
+}
