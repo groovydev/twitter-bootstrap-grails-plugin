@@ -44,7 +44,7 @@ To use responsive css, you have to declare bootstrap-responsive-css.
 Asset-Pipeline Support
 ----------------------
 
-You may also use the asset-pipeline plugin (minimal 0.1.7) to include your bootstrap resources add the following to your applications css or js file.
+You may also use the asset-pipeline plugin (minimal 0.1.7) to include your bootstrap resources add the following to your application's css or js file.
 
 Javascript:
 ```javascript
