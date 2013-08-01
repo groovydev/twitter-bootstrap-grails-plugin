@@ -41,6 +41,27 @@ A bootstrap resource depends on bootstrap-css and bootstrap-js.
 If less-resources plugin is installed, bootstrap resource depends on bootstrap-less and bootstrap-js.
 To use responsive css, you have to declare bootstrap-responsive-css.
 
+Asset-Pipeline Support
+----------------------
+
+You may also use the asset-pipeline plugin (minimal 0.1.7) to include your bootstrap resources add the following to your applications css or js file.
+
+Javascript:
+```javascript
+//= require bootstrap
+
+console.log("My javascript goes here");
+```
+
+Stylesheet (CSS):
+```css
+/*
+*= require boostrap
+*= require bootstrap-responsive
+*/
+```
+**Note:** LESS Is also available if less-asset-pipeline plugin is used.
+
 Usage
 -----
 
@@ -116,9 +137,9 @@ Config.groovy
 -------------
 
 Fix grails taglib g:paginate to work with bootstrap css.
- 
+
     grails.plugins.twitterbootstrap.fixtaglib = true
-    
+
 Control plugin resources bundling.
 
     Configuration key:
@@ -154,13 +175,13 @@ History
 -------
 2.3.2
 - Upgraded to Bootstrap 2.3.2
-    
+
 2.3.1
 - Upgraded to Bootstrap 2.3.1
-    
+
 2.3.0
 - Upgraded to Bootstrap 2.3.0
-    
+
 2.2.2
 - Fixed #50 and #51. Pagination now supports the mapping attribute and the plugin should no longer include the old grails style.
 - Upgraded Bootstrap to 2.2.2.
@@ -176,7 +197,7 @@ History
 
 2.1.0.1
 - Fixed resources dependency
-	
+
 2.1.0
 - Upgraded Bootstrap to 2.1.0.
 - Removed grails-style scaffolding
@@ -226,9 +247,9 @@ twitter-bootstrap plugin:
 Twitter Bootstrap CSS files:
 
     Copyright 2011 Twitter, Inc.
-    
+
     Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
-    
+
     http://www.apache.org/licenses/LICENSE-2.0
-    
+
     Unless required by applicable law

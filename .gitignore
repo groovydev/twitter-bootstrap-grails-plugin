@@ -1,4 +1,5 @@
 .settings
+.DS_Store
 .svn
 target
 web-app/WEB-INF/
