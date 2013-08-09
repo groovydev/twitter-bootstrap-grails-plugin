@@ -13,10 +13,7 @@ Including the resources
 You must use the Grails resources framework to make use of this plugin. The resources exposed by this plugin are:
 
     bootstrap-js - all javascript resources
-    bootstrap-css - all css resources (without responsive css)
-
-    bootstrap-responsive-css - bootstrap responsive css resource
-    bootstrap-responsive-less - bootstrap responsive less resource (use one or the other)
+    bootstrap-css - all css resources 
 
     bootstrap-alert - bootstrap alerts javascript resource
     bootstrap-affix - bootstrap affix javascript resource
@@ -33,13 +30,12 @@ You must use the Grails resources framework to make use of this plugin. The reso
     bootstrap-transition - bootstrap transition javascript resource
     bootstrap-less - bootstrap less resource
 
-    bootstrap - all bootstrap css (or less) and javascript resources, except bootstrap-responsive-css
+    bootstrap - all bootstrap css (or less) and javascript resources
 
 Note
 -----
 A bootstrap resource depends on bootstrap-css and bootstrap-js.
 If less-resources plugin is installed, bootstrap resource depends on bootstrap-less and bootstrap-js.
-To use responsive css, you have to declare bootstrap-responsive-css.
 
 Asset-Pipeline Support
 ----------------------
@@ -57,7 +53,6 @@ Stylesheet (CSS):
 ```css
 /*
 *= require boostrap
-*= require bootstrap-responsive
 */
 ```
 **Note:** LESS Is also available if less-asset-pipeline plugin is used.

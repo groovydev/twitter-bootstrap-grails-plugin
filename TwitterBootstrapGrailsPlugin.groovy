@@ -3,7 +3,7 @@ import org.groovydev.TwitterBootstrapTagLib
 class TwitterBootstrapGrailsPlugin {
 
     // the plugin version
-    def version = "2.3.2"
+    def version = "3.0.0.RC1"
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "1.3.7 > *"
 
@@ -20,7 +20,7 @@ class TwitterBootstrapGrailsPlugin {
     def description = """Provides Twitter Bootstrap CSS framework resource files.
 
 Bootstrap is Twitter's toolkit for kickstarting CSS for websites, apps, and more. It includes base CSS styles for typography, forms, buttons, tables, grids, navigation, alerts, and more.
-To get started with Bootstrap checkout the [Bootstrap Documentation|http://twitter.github.com/bootstrap]!
+To get started with Bootstrap checkout the [Bootstrap Documentation|http://getbootstrap.com/getting-started/]!
 """
 
     // URL to the plugin's documentation

@@ -42,19 +42,6 @@ modules = {
         resource id: 'bootstrap-css', url:[plugin: 'twitter-bootstrap', dir: 'css', file: (dev ? cssFile : cssminFile)], disposition: 'head', exclude:'minify'
     }
 
-    'bootstrap-responsive-css' {
-        defaultBundle configDefaultBundle
-        dependsOn 'bootstrap-css'
-
-        resource id: 'bootstrap-responsive-css', url:[plugin: 'twitter-bootstrap', dir: 'css', file: (dev ? 'bootstrap-responsive.css' : 'bootstrap-responsive.min.css')], disposition: 'head', exclude:'minify'
-    }
-    
-    'bootstrap-responsive-less' {
-	dependsOn 'bootstrap-less'
-	resource id: 'bootstrap-responsive-less', url:[plugin: 'twitter-bootstrap', dir: 'less', file: 'responsive.less'], attrs:[rel: "stylesheet/less", type:'css']
-    }
-
-
     'bootstrap-alert' {
         defaultBundle configDefaultBundle
         if (jqueryPlugin) {
@@ -147,15 +134,6 @@ modules = {
         resource id: 'bootstrap-carousel', url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-carousel.js']
     }
 
-    'bootstrap-typeahead' {
-        defaultBundle configDefaultBundle
-        if (jqueryPlugin) {
-            dependsOn "jquery"
-        }
-
-        resource id: 'bootstrap-typeahead', url:[plugin: 'twitter-bootstrap', dir: 'js', file: 'bootstrap-typeahead.js']
-    }
-
     'bootstrap-collapse' {
         defaultBundle configDefaultBundle
         if (jqueryPlugin) {
@@ -179,7 +157,7 @@ modules = {
         if (jqueryPlugin) {
             dependsOn 'jquery'
         }
-        dependsOn 'bootstrap-transition,bootstrap-alert,bootstrap-dropdown,bootstrap-modal,bootstrap-scrollspy,bootstrap-tab,bootstrap-tooltip,bootstrap-popover,bootstrap-button,bootstrap-carousel,bootstrap-typeahead,bootstrap-collapse,bootstrap-affix'
+        dependsOn 'bootstrap-transition,bootstrap-alert,bootstrap-dropdown,bootstrap-modal,bootstrap-scrollspy,bootstrap-tab,bootstrap-tooltip,bootstrap-popover,bootstrap-button,bootstrap-carousel,bootstrap-collapse,bootstrap-affix'
     }
 
     'bootstrap-less' {
