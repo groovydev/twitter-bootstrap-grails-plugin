@@ -3,7 +3,7 @@ import org.groovydev.TwitterBootstrapTagLib
 class TwitterBootstrapGrailsPlugin {
 
     // the plugin version
-    def version = "3.0.0.RC1"
+    def version = "3.0.0.RC2"
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "1.3.7 > *"
 
