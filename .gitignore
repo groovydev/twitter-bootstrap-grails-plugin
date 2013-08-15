@@ -7,3 +7,6 @@ web-app/WEB-INF/
 *.ipr
 *.iws
 .idea/
+plugin.xml
+grails-*.zip
+*.log
