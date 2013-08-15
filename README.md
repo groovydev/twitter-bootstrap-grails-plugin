@@ -170,7 +170,8 @@ Upgrading to 3.0.0
 ------------------
 Bootstrap 3.0.0 is not directly compatible with Bootstrap 2. It is mobile first and
 for example the span classes have been renamed to col and now behave different on
-mobile, tablet and desktop.
+mobile, tablet and desktop - it is responsive by default and therefore the bootstrap-responsive
+resources has been removed.
 
 The typeahead javascript has been removed from Bootstrap, instead Twitter Typeahead.js
 is recommended as a replacement. There is a Grails plugin at http://grails.org/plugin/twitter-typeahead
