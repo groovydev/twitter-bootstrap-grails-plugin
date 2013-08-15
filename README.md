@@ -160,14 +160,31 @@ Logging
 
     grails.plugins.twitterbootstrap - log category
 
-
 Versioning
 ----------
 
     Plugin version convention is <original-twitter-boostrap-version>.<plugin-version>
 
+
+Upgrading to 3.0.0
+------------------
+Bootstrap 3.0.0 is not directly compatible with Bootstrap 2. It is mobile first and
+for example the span classes have been renamed to col and now behave different on
+mobile, tablet and desktop.
+
+The typeahead javascript has been removed from Bootstrap, instead Twitter Typeahead.js
+is recommended as a replacement. There is a Grails plugin at http://grails.org/plugin/twitter-typeahead
+which also includes Bootstrap layout.
+
+The icons are also no longer included, they are available at http://glyphicons.getbootstrap.com/
+
+See http://getbootstrap.com/css/ for the updated documentation.
+
 History
 -------
+3.0.0
+- Upgraded to Bootstrap 3.0.0
+
 2.3.2
 - Upgraded to Bootstrap 2.3.2
 
