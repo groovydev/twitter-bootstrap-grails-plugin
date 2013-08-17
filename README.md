@@ -173,6 +173,8 @@ for example the span classes have been renamed to col and now behave different o
 mobile, tablet and desktop - it is responsive by default and therefore the bootstrap-responsive
 resources has been removed.
 
+Divshot.com is working on a tool to help upgrading to Bootstrap 3: http://code.divshot.com/bootstrap3_upgrader/
+
 The typeahead javascript has been removed from Bootstrap, instead Twitter Typeahead.js
 is recommended as a replacement. There is a Grails plugin at http://grails.org/plugin/twitter-typeahead
 which also includes Bootstrap layout.
