@@ -42,6 +42,10 @@ modules = {
         resource id: 'bootstrap-css', url:[plugin: 'twitter-bootstrap', dir: 'css', file: (dev ? cssFile : cssminFile)], disposition: 'head', exclude:'minify'
     }
 
+    'bootstrap-theme-css' {
+        resource id: 'bootstrap-theme-css', url:[plugin: 'twitter-bootstrap', dir: 'css', file: (dev ? 'bootstrap-theme.css' : 'bootstrap-theme.min.css')], disposition: 'head', exclude:'minify'
+    }
+
     'bootstrap-alert' {
         defaultBundle configDefaultBundle
         if (jqueryPlugin) {

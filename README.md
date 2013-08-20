@@ -179,8 +179,6 @@ The typeahead javascript has been removed from Bootstrap, instead Twitter Typeah
 is recommended as a replacement. There is a Grails plugin at http://grails.org/plugin/twitter-typeahead
 which also includes Bootstrap layout.
 
-The icons are also no longer included, they are available at http://glyphicons.getbootstrap.com/
-
 See http://getbootstrap.com/css/ for the updated documentation.
 
 History
