@@ -13,10 +13,7 @@ Including the resources
 You must use the Grails resources framework to make use of this plugin. The resources exposed by this plugin are:
 
     bootstrap-js - all javascript resources
-    bootstrap-css - all css resources (without responsive css)
-
-    bootstrap-responsive-css - bootstrap responsive css resource
-    bootstrap-responsive-less - bootstrap responsive less resource (use one or the other)
+    bootstrap-css - all css resources 
 
     bootstrap-alert - bootstrap alerts javascript resource
     bootstrap-affix - bootstrap affix javascript resource
@@ -33,13 +30,12 @@ You must use the Grails resources framework to make use of this plugin. The reso
     bootstrap-transition - bootstrap transition javascript resource
     bootstrap-less - bootstrap less resource
 
-    bootstrap - all bootstrap css (or less) and javascript resources, except bootstrap-responsive-css
+    bootstrap - all bootstrap css (or less) and javascript resources
 
 Note
 -----
 A bootstrap resource depends on bootstrap-css and bootstrap-js.
 If less-resources plugin is installed, bootstrap resource depends on bootstrap-less and bootstrap-js.
-To use responsive css, you have to declare bootstrap-responsive-css.
 
 Asset-Pipeline Support
 ----------------------
@@ -57,7 +53,6 @@ Stylesheet (CSS):
 ```css
 /*
 *= require boostrap
-*= require bootstrap-responsive
 */
 ```
 **Note:** LESS Is also available if less-asset-pipeline plugin is used.
@@ -165,14 +160,32 @@ Logging
 
     grails.plugins.twitterbootstrap - log category
 
-
 Versioning
 ----------
 
     Plugin version convention is <original-twitter-boostrap-version>.<plugin-version>
 
+
+Upgrading to 3.0.0
+------------------
+Bootstrap 3.0.0 is not directly compatible with Bootstrap 2. It is mobile first and
+for example the span classes have been renamed to col and now behave different on
+mobile, tablet and desktop - it is responsive by default and therefore the bootstrap-responsive
+resources has been removed.
+
+Divshot.com is working on a tool to help upgrading to Bootstrap 3: http://code.divshot.com/bootstrap3_upgrader/
+
+The typeahead javascript has been removed from Bootstrap, instead Twitter Typeahead.js
+is recommended as a replacement. There is a Grails plugin at http://grails.org/plugin/twitter-typeahead
+which also includes Bootstrap layout.
+
+See http://getbootstrap.com/css/ for the updated documentation.
+
 History
 -------
+3.0.0
+- Upgraded to Bootstrap 3.0.0
+
 2.3.2
 - Upgraded to Bootstrap 2.3.2
 
