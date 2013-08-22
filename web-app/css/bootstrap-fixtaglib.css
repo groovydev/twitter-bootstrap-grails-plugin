@@ -1,11 +1,16 @@
 /* Fix Bootstrap Pagination Bug */
 .pagination span {
   float: left;
-  padding: 0 14px;
-  line-height: 34px;
+  padding: 4px 12px;
+  line-height: 20px;
   text-decoration: none;
   border: 1px solid #ddd;
-  border-left-width: 0;
+  border-left-width: 0px;
+}
+.pagination li {
+    padding-left: 0px;
+    padding-right: 0px;
+    display: inline-block;
 }
 .pagination li:first-child span {
   border-left-width: 1px;
@@ -24,6 +29,14 @@
 }
 .pagination .active span {
   background-color: #F5F5F5;
+}
+
+.pagination .disabled span {
+    color: #999999;
+    cursor: default;
+}
+.pagination .disabled span {
+    background-color: #F5F5F5;
 }
 
 /* Table Sorting */
