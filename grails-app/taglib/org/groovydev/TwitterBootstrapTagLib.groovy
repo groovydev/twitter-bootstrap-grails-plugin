@@ -93,10 +93,12 @@ class TwitterBootstrapTagLib {
         if (currentstep > firststep) {
             linkParams.offset = offset - max
             writer << '<li class="prev">'
+			writer << '<span>'
             writer << link(linkTagAttrs.clone()) {
                 (attrs.prev ?: messageSource.getMessage('paginate.prev', null, messageSource.getMessage('default.paginate.prev', null, 'Previous', locale), locale))
             }
-            writer << '</li>'
+			writer << '</span>'
+			writer << '</li>'
         }
         else {
             writer << '<li class="prev disabled">'
@@ -130,8 +132,10 @@ class TwitterBootstrapTagLib {
             if (beginstep > firststep) {
                 linkParams.offset = 0
                 writer << '<li>'
+				writer << '<span>'
                 writer << link(linkTagAttrs.clone()) {firststep.toString()}
                 writer << '</li>'
+				writer << '</span>'
                 writer << '<li class="disabled"><span>...</span></li>'
             }
 
@@ -145,7 +149,9 @@ class TwitterBootstrapTagLib {
                 else {
                     linkParams.offset = (i - 1) * max
                     writer << "<li>";
+					writer << '<span>'
                     writer << link(linkTagAttrs.clone()) {i.toString()}
+					writer << '</span>'
                     writer << "</li>";
                 }
             }
@@ -155,7 +161,9 @@ class TwitterBootstrapTagLib {
                 writer << '<li class="disabled"><span>...</span></li>'
                 linkParams.offset = (laststep -1) * max
                 writer << '<li>'
+				writer << '<span>'
                 writer << link(linkTagAttrs.clone()) { laststep.toString() }
+				writer << '</span>'
                 writer << '</li>'
             }
         }
@@ -164,9 +172,11 @@ class TwitterBootstrapTagLib {
         if (currentstep < laststep) {
             linkParams.offset = offset + max
             writer << '<li class="next">'
+			writer << '<span>'
             writer << link(linkTagAttrs.clone()) {
                 (attrs.next ? attrs.next : messageSource.getMessage('paginate.next', null, messageSource.getMessage('default.paginate.next', null, 'Next', locale), locale))
             }
+			writer << '</span>'
             writer << '</li>'
         }
         else {
@@ -180,5 +190,5 @@ class TwitterBootstrapTagLib {
 
         writer << '</ul></div>'
     }
-    
+
 }
