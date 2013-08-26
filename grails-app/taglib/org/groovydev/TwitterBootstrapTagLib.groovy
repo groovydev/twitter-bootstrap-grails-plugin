@@ -88,14 +88,14 @@ class TwitterBootstrapTagLib {
         int firststep = 1
         int laststep = Math.round(Math.ceil(total / max))
 
-        writer << "<div class=\"${cssClasses}\"><ul>"
+        writer << "<ul class=\"${cssClasses}\">"
         // display previous link when not on firststep
         if (currentstep > firststep) {
             linkParams.offset = offset - max
             writer << '<li class="prev">'
 			writer << '<span>'
             writer << link(linkTagAttrs.clone()) {
-                (attrs.prev ?: messageSource.getMessage('paginate.prev', null, messageSource.getMessage('default.paginate.prev', null, 'Previous', locale), locale))
+                (attrs.prev ?: messageSource.getMessage('paginate.prev', null, '&laquo;', locale))
             }
 			writer << '</span>'
 			writer << '</li>'
@@ -103,7 +103,7 @@ class TwitterBootstrapTagLib {
         else {
             writer << '<li class="prev disabled">'
             writer << '<span>'
-            writer << (attrs.prev ?: messageSource.getMessage('paginate.prev', null, messageSource.getMessage('default.paginate.prev', null, 'Previous', locale), locale))
+            writer << (attrs.prev ?: messageSource.getMessage('paginate.prev', null, '&laquo;', locale))
             writer << '</span>'
             writer << '</li>'
         }
@@ -174,21 +174,21 @@ class TwitterBootstrapTagLib {
             writer << '<li class="next">'
 			writer << '<span>'
             writer << link(linkTagAttrs.clone()) {
-                (attrs.next ? attrs.next : messageSource.getMessage('paginate.next', null, messageSource.getMessage('default.paginate.next', null, 'Next', locale), locale))
+                (attrs.next ? attrs.next : messageSource.getMessage('paginate.next', null, '&raquo;', locale))
             }
 			writer << '</span>'
             writer << '</li>'
         }
         else {
             linkParams.offset = offset + max
-            writer << '<li class="next disabled">'
+            writer << '<li class="disabled">'
             writer << '<span>'
-            writer << (attrs.next ? attrs.next : messageSource.getMessage('paginate.next', null, messageSource.getMessage('default.paginate.next', null, 'Next', locale), locale))
+            writer << (attrs.next ? attrs.next : messageSource.getMessage('paginate.next', null, '&raquo;', locale))
             writer << '</span>'
             writer << '</li>'
         }
 
-        writer << '</ul></div>'
+        writer << '</ul>'
     }
 
 }
