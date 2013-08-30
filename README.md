@@ -52,7 +52,7 @@ console.log("My javascript goes here");
 Stylesheet (CSS):
 ```css
 /*
-*= require boostrap
+*= require bootstrap
 */
 ```
 **Note:** LESS Is also available if less-asset-pipeline plugin is used.
