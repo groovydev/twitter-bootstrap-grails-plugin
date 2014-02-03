@@ -185,6 +185,7 @@ History
 -------
 3.1.0
 - Upgraded to Bootstrap 3.1.0
+
 3.0.3
 - Upgraded to Bootstrap 3.0.3
 
