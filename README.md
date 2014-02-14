@@ -183,6 +183,9 @@ See http://getbootstrap.com/css/ for the updated documentation.
 
 History
 -------
+3.1.1
+- Upgraded to Bootstrap 3.1.1
+
 3.1.0
 - Upgraded to Bootstrap 3.1.0
 
