@@ -45,7 +45,7 @@ class TwitterBootstrapTagLib {
         def locale = RCU.getLocale(request)
 
         def total = attrs.int('total') ?: 0
-        def action = (attrs.action ? attrs.action : (params.action ? params.action : "list"))
+        def action = (attrs.action ? attrs.action : (params.action ? params.action : "index"))
         def offset = params.int('offset') ?: 0
         def max = params.int('max')
         def maxsteps = (attrs.int('maxsteps') ?: 10)
