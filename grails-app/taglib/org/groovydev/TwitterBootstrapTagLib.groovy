@@ -93,12 +93,10 @@ class TwitterBootstrapTagLib {
         if (currentstep > firststep) {
             linkParams.offset = offset - max
             writer << '<li class="prev">'
-			writer << '<span>'
             writer << link(linkTagAttrs.clone()) {
                 (attrs.prev ?: messageSource.getMessage('paginate.prev', null, '&laquo;', locale))
             }
-			writer << '</span>'
-			writer << '</li>'
+            writer << '</li>'
         }
         else {
             writer << '<li class="prev disabled">'
@@ -132,10 +130,8 @@ class TwitterBootstrapTagLib {
             if (beginstep > firststep) {
                 linkParams.offset = 0
                 writer << '<li>'
-				writer << '<span>'
                 writer << link(linkTagAttrs.clone()) {firststep.toString()}
                 writer << '</li>'
-				writer << '</span>'
                 writer << '<li class="disabled"><span>...</span></li>'
             }
 
@@ -143,15 +139,13 @@ class TwitterBootstrapTagLib {
             (beginstep..endstep).each { i ->
                 if (currentstep == i) {
                     writer << "<li class=\"active\">"
-		    writer << "<span>${i}</span>"
+                    writer << "<span>${i}</span>"
                     writer << "</li>";
                 }
                 else {
                     linkParams.offset = (i - 1) * max
                     writer << "<li>";
-					writer << '<span>'
                     writer << link(linkTagAttrs.clone()) {i.toString()}
-					writer << '</span>'
                     writer << "</li>";
                 }
             }
@@ -161,9 +155,7 @@ class TwitterBootstrapTagLib {
                 writer << '<li class="disabled"><span>...</span></li>'
                 linkParams.offset = (laststep -1) * max
                 writer << '<li>'
-				writer << '<span>'
                 writer << link(linkTagAttrs.clone()) { laststep.toString() }
-				writer << '</span>'
                 writer << '</li>'
             }
         }
@@ -172,11 +164,9 @@ class TwitterBootstrapTagLib {
         if (currentstep < laststep) {
             linkParams.offset = offset + max
             writer << '<li class="next">'
-			writer << '<span>'
             writer << link(linkTagAttrs.clone()) {
                 (attrs.next ? attrs.next : messageSource.getMessage('paginate.next', null, '&raquo;', locale))
             }
-			writer << '</span>'
             writer << '</li>'
         }
         else {
