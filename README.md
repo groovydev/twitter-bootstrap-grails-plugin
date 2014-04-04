@@ -98,9 +98,10 @@ Your grails-app/views/layouts/main.gsp:
 Using LESS bootstrap
 --------------------
 If you need customize bootstrap, you cannot use precompiled CSS resource files. You need to use LESS bootstrap files and LESS resource mapper.
-You can use less-resources plugin. It supports latest bootstrap and integrates fully with plugin.
+You can use either less-resources or lesscss-resources plugin. It supports latest bootstrap and integrates fully with these plugins.
 
 http://grails.org/plugin/less-resources
+http://grails.org/plugin/lesscss-resources
 
 
 Customize twitter-bootstrap
