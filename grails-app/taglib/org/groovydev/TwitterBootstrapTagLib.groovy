@@ -180,5 +180,32 @@ class TwitterBootstrapTagLib {
 
         writer << '</ul>'
     }
+	
+	/**
+	 *  
+	 * @attr body REQUIRED The body must be breadcrumbLink 
+	 */
+	def breadcrumb = { attrs, body ->
+		out << '<ol class="breadcrumb">'
+		out << body()
+		out << '</ol>'
+	}
+	
+	/**
+	 * @emptyTag
+	 * 
+	 * @attr value REQUIRED The value is the value of the link
+	 * @attr active True if the link is active
+	 */
+	def breadcrumbLink = { attrs ->
+		def value = attrs.value
+		def active = attrs.boolean('active')
+		def link = attrs.link ?: '#'
+		if (active) {
+			out << "<li class=\"active\">${value}</li>"
+		} else {
+			out << "<li><a href=\"${link}\">${value}</a></li>"
+		}
+	}
 
 }

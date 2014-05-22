@@ -10,3 +10,5 @@ web-app/WEB-INF/
 plugin.xml
 grails-*.zip
 *.log
+*.class
+target-eclipse
