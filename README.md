@@ -184,6 +184,9 @@ See http://getbootstrap.com/css/ for the updated documentation.
 
 History
 -------
+3.1.1.3
+- Support for Grails 2.4
+
 3.1.1
 - Upgraded to Bootstrap 3.1.1
 
