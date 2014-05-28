@@ -1,16 +1,26 @@
-Grails plugin: Bootstrap CSS framework resource files
-===============================================
+# Bootstrap CSS  for Grails
+## CSS framework as Grails plugin
 
 Provides Bootstrap CSS framework resource files.
+
+Use in BuildConfig.groovy
+
+    plugin { 
+        /// whatever     
+        runtime ':twitter-bootstrap:$version' // current: 3.1.1.3
+        // else whatever
+    }
+
+
+# Description
 
 Bootstrap is a toolkit for kickstarting CSS for websites, apps, and more. It includes base CSS styles for typography, forms, buttons, tables, grids, navigation, alerts, and more.
 
 To get started -- checkout http://twbs.github.io/bootstrap !
 
-Including the resources
-------------------------
+## Including the resources
 
-You must use the Grails resources framework to make use of this plugin. The resources exposed by this plugin are:
+You must use the Grails resources framework (or asset pipeline, default for Grails 2.4.0+) to make use of this plugin. The resources exposed by this plugin are:
 
     bootstrap-js - all javascript resources
     bootstrap-css - all css resources 
@@ -32,40 +42,44 @@ You must use the Grails resources framework to make use of this plugin. The reso
 
     bootstrap - all bootstrap css (or less) and javascript resources
 
-Note
------
+## Note
 A bootstrap resource depends on bootstrap-css and bootstrap-js.
 If less-resources plugin is installed, bootstrap resource depends on bootstrap-less and bootstrap-js.
 
-Asset-Pipeline Support
-----------------------
+# Asset-Pipeline Support
 
 You may also use the asset-pipeline plugin (minimal 0.1.7) to include your bootstrap resources add the following to your application's css or js file.
 
-Javascript:
+Javascript (application.js):
 ```javascript
 //= require bootstrap
 
 console.log("My javascript goes here");
 ```
 
-Stylesheet (CSS):
+Stylesheet (CSS: application.css):
 ```css
 /*
 *= require bootstrap
 */
 ```
-**Note:** LESS Is also available if less-asset-pipeline plugin is used.
 
-Usage
------
+## LESS Support
+LESS Is also available if less-asset-pipeline plugin is used. See asset-pipeline docs to use it.
+
+## Template
+
+Since its the default for 2.4.0 you will not have to do anything in that version.
+However, if you are using < 2.4.0 and the asset-pipeline plugin, double check if any of the assets include a bootstrap required files (css or/and javascript).
+
+
+# Usage in Grails Resources support
 
 Declare bootstrap resource module in GSP page header:
 
     <r:require modules="bootstrap"/>
 
-Edit your GSP page
-------------------
+# Usage in GSP page with Resource support
 
     <html>
        <head>
