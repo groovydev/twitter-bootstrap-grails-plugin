@@ -72,6 +72,24 @@ LESS Is also available if less-asset-pipeline plugin is used. See asset-pipeline
 Since its the default for 2.4.0 you will not have to do anything in that version.
 However, if you are using < 2.4.0 and the asset-pipeline plugin, double check if any of the assets include a bootstrap required files (css or/and javascript).
 
+## Layout
+
+Your grails-app/views/layouts/main.gsp:
+
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title><g:layoutTitle default="Grails"/></title>
+      <asset:stylesheet src="application.css"/>
+      <g:layoutHead/>
+    </head>
+    <body>
+      <g:layoutBody/>
+      <asset:javascript src="application.js"/>
+    </body>
+    </html>
+
 
 # Usage in Grails Resources support
 
@@ -79,7 +97,7 @@ Declare bootstrap resource module in GSP page header:
 
     <r:require modules="bootstrap"/>
 
-# Usage in GSP page with Resource support
+## Usage in GSP page with Resource support
 
     <html>
        <head>
@@ -92,8 +110,7 @@ Declare bootstrap resource module in GSP page header:
     </html>
 
 
-Edit your Sitemesh layout
--------------------------
+## Edit your Sitemesh layout
 
 Your grails-app/views/layouts/main.gsp:
 
@@ -109,8 +126,8 @@ Your grails-app/views/layouts/main.gsp:
        </body>
     </html>
 
-Using LESS bootstrap
---------------------
+## Using LESS bootstrap
+
 If you need customize bootstrap, you cannot use precompiled CSS resource files. You need to use LESS bootstrap files and LESS resource mapper.
 You can use either less-resources or lesscss-resources plugin. It supports latest bootstrap and integrates fully with these plugins.
 
@@ -118,8 +135,8 @@ http://grails.org/plugin/less-resources
 http://grails.org/plugin/lesscss-resources
 
 
-Customize twitter-bootstrap
----------------------------
+## Customize twitter-bootstrap
+
 
 To use custom bootstrap less, you need copy custom files to 'web-app/less'. Any file in this
 directory will override original bootstrap. Usually, one customize variables.less in 'web-app/less'.
@@ -143,8 +160,8 @@ Prepare customized variables.less file and copy to /web-app/less/ directory. You
 as base file (https://github.com/twbs/bootstrap/blob/v2.0.2/less/variables.less).
 
 
-Config.groovy
--------------
+# Config.groovy
+
 
 Fix grails taglib g:paginate to work with bootstrap css.
 
@@ -166,23 +183,23 @@ Example in grails-app/conf/Config.groovy:
     grails.plugins.twitterbootstrap.defaultBundle = 'bundle_bootstrap'
 
 
-Example
--------
+# Example
+
 There is an [example grails project](http://github.com/robfletcher/twitter-bootstrap-scaffolding) that provides scaffolded views.robfletcher/twitter-bootstrap-scaffolding
 
-Logging
--------
+# Logging
+
 
     grails.plugins.twitterbootstrap - log category
 
-Versioning
-----------
+# Versioning
+
 
     Plugin version convention is <original-twitter-boostrap-version>.<plugin-version>
 
 
-Upgrading to 3.0.0
-------------------
+# Upgrading to 3.0.0
+
 Bootstrap 3.0.0 is not directly compatible with Bootstrap 2. It is mobile first and
 for example the span classes have been renamed to col and now behave different on
 mobile, tablet and desktop - it is responsive by default and therefore the bootstrap-responsive
@@ -196,8 +213,8 @@ which also includes Bootstrap layout.
 
 See http://getbootstrap.com/css/ for the updated documentation.
 
-History
--------
+# History
+
 3.1.1.3
 - Support for Grails 2.4
 
@@ -270,8 +287,8 @@ History
 - Latest stable plugin edition with twitter-bootstrap v1.4.0
 - Plugin documentation for v1.4.0.14 https://github.com/groovydev/twitter-bootstrap-grails-plugin/blob/v1.4.0.14/README.md
 
-Copyright and License
----------------------
+# Copyright and License
+
 
 twitter-bootstrap plugin:
 
