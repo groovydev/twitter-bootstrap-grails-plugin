@@ -173,6 +173,9 @@ Versioning
 
 History
 -------
+2.3.2.2
+- Support Grails 2.3 and 2.4
+
 2.3.2
 - Upgraded to Bootstrap 2.3.2
 
