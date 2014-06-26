@@ -1,9 +1,12 @@
 class TwitterBootstrapGrailsPlugin {
-    def version = "3.1.1.3"
+    def version = "3.2.0"
     def grailsVersion = "1.3.7 > *"
     def author = "Karol Balejko"
     def authorEmail = "kb@groovydev.com"
-    def developers = [ [ name: "Nicholas Wittstruck", email: "nicholas@spotmapping.com" ]]
+    def developers = [ 
+                [ name: "Nicholas Wittstruck", email: "nicholas@spotmapping.com" ],
+                [ name: "Michael Legart", email: "ml@code3.dk" ]
+                ]
     def organization = [ name: "GroovyDev", url: "http://groovydev.com/" ]
     def title = "Plugin Bootstrap CSS framework resource files"
     def description = """Provides Bootstrap CSS framework resource files.
