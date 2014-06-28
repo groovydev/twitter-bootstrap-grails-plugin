@@ -61,6 +61,9 @@ class TwitterBootstrapTagLib {
         if (params.order) linkParams.order = params.order
 
         def linkTagAttrs = [action:action]
+        if (attrs.namespace) {
+            linkTagAttrs.namespace = attrs.namespace
+        }
         if (attrs.controller) {
             linkTagAttrs.controller = attrs.controller
         }
