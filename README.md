@@ -41,7 +41,33 @@ Stylesheet (CSS: application.css):
 ```
 
 ## LESS Support
-LESS Is also available if less-asset-pipeline plugin is used. See asset-pipeline docs to use it.
+LESS Is also available if less-asset-pipeline plugin is used. 
+
+**Note**: Currently does not work with Bootstrap 3.2, only version
+3.1.1.3 of the plugin.
+
+1. Install the **less-asset-pipeline** plugin
+2. Add the following to **Config.groovy** to optimize compilation
+
+   ```groovy
+   grails.assets.less.compile = 'less4j'
+   grails.assets.plugin."twitter-bootstrap".excludes = ["**/*.less"]
+   grails.assets.plugin."twitter-bootstrap".includes = ["bootstrap.less"]
+   ```
+3. Create **grails-app/assets/stylesheets/custom-bootstrap.less**:
+
+   ```css
+   @import "bootstrap.less";
+   ```
+   and override variables in this file.
+
+4. Import the custom-bootstrap.less in **application.css**:
+
+   ```css
+   /*
+    *= require custom-bootstrap
+    */
+   ```
 
 ## Template
 
