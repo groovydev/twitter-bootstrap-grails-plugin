@@ -7,7 +7,7 @@ Use in BuildConfig.groovy
 
     plugin { 
         /// whatever     
-        runtime ':twitter-bootstrap:$version' // current: 3.1.1.3
+        runtime ':twitter-bootstrap:$version' // current: 3.2.0
         // else whatever
     }
 
@@ -18,37 +18,13 @@ Bootstrap is a toolkit for kickstarting CSS for websites, apps, and more. It inc
 
 To get started -- checkout http://twbs.github.io/bootstrap !
 
-## Including the resources
+# Including the resources with Asset-Pipeline plugin
 
-You must use the Grails resources framework (or asset pipeline, default for Grails 2.4.0+) to make use of this plugin. The resources exposed by this plugin are:
+The recommended way is to use the asset-pipeline plugin (minimal 0.1.7). It is
+the default since Grails 2.4.0 and replaces the resources plugin.
 
-    bootstrap-js - all javascript resources
-    bootstrap-css - all css resources 
-
-    bootstrap-alert - bootstrap alerts javascript resource
-    bootstrap-affix - bootstrap affix javascript resource
-    bootstrap-dropdown - bootstrap dropdown javascript resource
-    bootstrap-modal - bootstrap modal javascript resource
-    bootstrap-popover - bootstrap popover javascript resource
-    bootstrap-scrollspy - bootstrap scrollspy javascript resource
-    bootstrap-tab - bootstrap tabs javascript resource
-    bootstrap-tooltip - bootstrap tooltips javascript resource
-    bootstrap-button - bootstrap buttons javascript resource
-    bootstrap-carousel - bootstrap carousel javascript resource
-    bootstrap-typeahead - bootstrap typeahead javascript resource
-    bootstrap-collapse - bootstrap collapse javascript resource
-    bootstrap-transition - bootstrap transition javascript resource
-    bootstrap-less - bootstrap less resource
-
-    bootstrap - all bootstrap css (or less) and javascript resources
-
-## Note
-A bootstrap resource depends on bootstrap-css and bootstrap-js.
-If less-resources plugin is installed, bootstrap resource depends on bootstrap-less and bootstrap-js.
-
-# Asset-Pipeline Support
-
-You may also use the asset-pipeline plugin (minimal 0.1.7) to include your bootstrap resources add the following to your application's css or js file.
+To include your bootstrap resources add the following to your application's css 
+or js file.
 
 Javascript (application.js):
 ```javascript
@@ -91,7 +67,34 @@ Your grails-app/views/layouts/main.gsp:
     </html>
 
 
-# Usage in Grails Resources support
+# Resources plugin
+
+You may also use the Grails resources framework to make use of this plugin. The resources exposed 
+by this plugin are:
+
+    bootstrap-js - all javascript resources
+    bootstrap-css - all css resources 
+
+    bootstrap-alert - bootstrap alerts javascript resource
+    bootstrap-affix - bootstrap affix javascript resource
+    bootstrap-dropdown - bootstrap dropdown javascript resource
+    bootstrap-modal - bootstrap modal javascript resource
+    bootstrap-popover - bootstrap popover javascript resource
+    bootstrap-scrollspy - bootstrap scrollspy javascript resource
+    bootstrap-tab - bootstrap tabs javascript resource
+    bootstrap-tooltip - bootstrap tooltips javascript resource
+    bootstrap-button - bootstrap buttons javascript resource
+    bootstrap-carousel - bootstrap carousel javascript resource
+    bootstrap-typeahead - bootstrap typeahead javascript resource
+    bootstrap-collapse - bootstrap collapse javascript resource
+    bootstrap-transition - bootstrap transition javascript resource
+    bootstrap-less - bootstrap less resource
+
+    bootstrap - all bootstrap css (or less) and javascript resources
+
+A bootstrap resource depends on bootstrap-css and bootstrap-js.
+
+## Usage in Grails Resources support
 
 Declare bootstrap resource module in GSP page header:
 
@@ -126,39 +129,11 @@ Your grails-app/views/layouts/main.gsp:
        </body>
     </html>
 
-## Using LESS bootstrap
+## LESS support
 
-If you need customize bootstrap, you cannot use precompiled CSS resource files. You need to use LESS bootstrap files and LESS resource mapper.
-You can use either less-resources or lesscss-resources plugin. It supports latest bootstrap and integrates fully with these plugins.
-
-http://grails.org/plugin/less-resources
-http://grails.org/plugin/lesscss-resources
-
-
-## Customize twitter-bootstrap
-
-
-To use custom bootstrap less, you need copy custom files to 'web-app/less'. Any file in this
-directory will override original bootstrap. Usually, one customize variables.less in 'web-app/less'.
-
-Add custom-bootstrap.less file to /web-app/less/ directory:
-
-    @import "bootstrap.less";
-
-Add 'custom-bootstrap' resource module to Config.groovy:
-
-    grails.resources.modules = {
-
-        'custom-bootstrap' {
-            dependsOn 'bootstrap'
-            resource url:[dir: 'less', file: 'custom-bootstrap.less'], attrs:[rel: "stylesheet/less", type:'css']
-        }
-
-    }
-
-Prepare customized variables.less file and copy to /web-app/less/ directory. You can use original variables.less
-as base file (https://github.com/twbs/bootstrap/blob/v2.0.2/less/variables.less).
-
+To use less you must use the asset-pipeline plugin, since the less plugins for
+resources (less-resources and lesscss-resources) has not been updated to LESS 1.6,
+which is required since Bootstrap 3.1.
 
 # Config.groovy
 
