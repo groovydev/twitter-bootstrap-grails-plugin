@@ -173,6 +173,9 @@ Versioning
 
 History
 -------
+2.3.2.3
+- Fixed #113 for bootstrap2.3 branch
+
 2.3.2.2
 - Support Grails 2.3 and 2.4
 
