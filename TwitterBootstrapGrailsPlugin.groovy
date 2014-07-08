@@ -1,5 +1,5 @@
 class TwitterBootstrapGrailsPlugin {
-    def version = "3.2.0"
+    def version = "3.2.1"
     def grailsVersion = "1.3.7 > *"
     def author = "Karol Balejko"
     def authorEmail = "kb@groovydev.com"
