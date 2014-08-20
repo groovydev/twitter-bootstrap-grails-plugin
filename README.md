@@ -7,7 +7,7 @@ Use in BuildConfig.groovy
 
     plugin { 
         /// whatever     
-        runtime ':twitter-bootstrap:$version' // current: 3.2.0
+        runtime ':twitter-bootstrap:$version' // current: 3.2.0.2
         // else whatever
     }
 
@@ -42,9 +42,6 @@ Stylesheet (CSS: application.css):
 
 ## LESS Support
 LESS Is also available if less-asset-pipeline plugin is used. 
-
-**Note**: Currently does not work with Bootstrap 3.2, only version
-3.1.1.3 of the plugin.
 
 1. Install the **less-asset-pipeline** plugin
 2. Add the following to **Config.groovy** to optimize compilation
@@ -215,6 +212,9 @@ which also includes Bootstrap layout.
 See http://getbootstrap.com/css/ for the updated documentation.
 
 # History
+
+3.2.0.2
+- Added missing mixin less files. Less now works for Bootstrap 3.2
 
 3.2.1
 - Fixed g:paginate for Grails 2.4
