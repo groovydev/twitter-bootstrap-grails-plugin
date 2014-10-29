@@ -5,9 +5,9 @@ Provides Bootstrap CSS framework resource files.
 
 Use in BuildConfig.groovy
 
-    plugin { 
-        /// whatever     
-        runtime ':twitter-bootstrap:$version' // current: 3.2.0.2
+    plugin {
+        /// whatever
+        runtime ':twitter-bootstrap:$version' // current: 3.3.0
         // else whatever
     }
 
@@ -23,7 +23,7 @@ To get started -- checkout http://twbs.github.io/bootstrap !
 The recommended way is to use the asset-pipeline plugin (minimal 0.1.7). It is
 the default since Grails 2.4.0 and replaces the resources plugin.
 
-To include your bootstrap resources add the following to your application's css 
+To include your bootstrap resources add the following to your application's css
 or js file.
 
 Javascript (application.js):
@@ -41,7 +41,7 @@ Stylesheet (CSS: application.css):
 ```
 
 ## LESS Support
-LESS Is also available if less-asset-pipeline plugin is used. 
+LESS Is also available if less-asset-pipeline plugin is used.
 
 1. Install the **less-asset-pipeline** plugin
 2. Add the following to **Config.groovy** to optimize compilation
@@ -92,11 +92,11 @@ Your grails-app/views/layouts/main.gsp:
 
 # Resources plugin
 
-You may also use the Grails resources framework to make use of this plugin. The resources exposed 
+You may also use the Grails resources framework to make use of this plugin. The resources exposed
 by this plugin are:
 
     bootstrap-js - all javascript resources
-    bootstrap-css - all css resources 
+    bootstrap-css - all css resources
 
     bootstrap-alert - bootstrap alerts javascript resource
     bootstrap-affix - bootstrap affix javascript resource
@@ -212,6 +212,9 @@ which also includes Bootstrap layout.
 See http://getbootstrap.com/css/ for the updated documentation.
 
 # History
+
+3.3.0
+ Upgraded to Bootstrap 3.3.0
 
 3.2.0.2
 - Added missing mixin less files. Less now works for Bootstrap 3.2

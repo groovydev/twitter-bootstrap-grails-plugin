@@ -1,9 +1,9 @@
 class TwitterBootstrapGrailsPlugin {
-    def version = "3.2.0.2"
+    def version = "3.3.0"
     def grailsVersion = "1.3.7 > *"
     def author = "Karol Balejko"
     def authorEmail = "kb@groovydev.com"
-    def developers = [ 
+    def developers = [
                 [ name: "Nicholas Wittstruck", email: "nicholas@spotmapping.com" ],
                 [ name: "Michael Legart", email: "ml@code3.dk" ]
                 ]
