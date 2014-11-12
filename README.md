@@ -213,8 +213,11 @@ See http://getbootstrap.com/css/ for the updated documentation.
 
 # History
 
+3.3.1
+- Upgraded to Bootstrap 3.3.1
+
 3.3.0
- Upgraded to Bootstrap 3.3.0
+- Upgraded to Bootstrap 3.3.0
 
 3.2.0.2
 - Added missing mixin less files. Less now works for Bootstrap 3.2
