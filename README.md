@@ -3,14 +3,14 @@
 
 Provides Bootstrap CSS framework resource files.
 
-Use in BuildConfig.groovy
-
-    plugin {
-        /// whatever
-        runtime ':twitter-bootstrap:$version' // current: 3.3.0
-        // else whatever
-    }
-
+Use in `BuildConfig.groovy`
+```groovy
+plugin {
+    /// whatever
+    runtime ':twitter-bootstrap:$version' // current: 3.3.0
+    // else whatever
+}
+```
 
 # Description
 
@@ -26,14 +26,14 @@ the default since Grails 2.4.0 and replaces the resources plugin.
 To include your bootstrap resources add the following to your application's css
 or js file.
 
-Javascript (application.js):
+Javascript `application.js`:
 ```javascript
 //= require bootstrap
 
 console.log("My javascript goes here");
 ```
 
-Stylesheet (CSS: application.css):
+Stylesheet `application.css`:
 ```css
 /*
 *= require bootstrap
@@ -41,24 +41,24 @@ Stylesheet (CSS: application.css):
 ```
 
 ## LESS Support
-LESS Is also available if less-asset-pipeline plugin is used.
+LESS Is also available if `less-asset-pipeline` plugin is used.
 
-1. Install the **less-asset-pipeline** plugin
-2. Add the following to **Config.groovy** to optimize compilation
+1. Install the `less-asset-pipeline` plugin
+2. Add the following to `Config.groovy` to optimize compilation
 
    ```groovy
    grails.assets.less.compile = 'less4j'
    grails.assets.plugin."twitter-bootstrap".excludes = ["**/*.less"]
    grails.assets.plugin."twitter-bootstrap".includes = ["bootstrap.less"]
    ```
-3. Create **grails-app/assets/stylesheets/custom-bootstrap.less**:
+3. Create `rails-app/assets/stylesheets/custom-bootstrap.less`:
 
    ```css
    @import "bootstrap.less";
    ```
    and override variables in this file.
 
-4. Import the custom-bootstrap.less in **application.css**:
+4. Import the `custom-bootstrap.less` in `application.css`:
 
    ```css
    /*
@@ -73,22 +73,21 @@ However, if you are using < 2.4.0 and the asset-pipeline plugin, double check if
 
 ## Layout
 
-Your grails-app/views/layouts/main.gsp:
-
-
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <title><g:layoutTitle default="Grails"/></title>
-      <asset:stylesheet src="application.css"/>
-      <g:layoutHead/>
-    </head>
-    <body>
-      <g:layoutBody/>
-      <asset:javascript src="application.js"/>
-    </body>
-    </html>
-
+Your `grails-app/views/layouts/main.gsp`:
+```gsp
+<!DOCTYPE html>
+<html>
+<head>
+    <title><g:layoutTitle default="Grails"/></title>
+    <asset:stylesheet src="application.css"/>
+    <g:layoutHead/>
+</head>
+<body>
+    <g:layoutBody/>
+    <asset:javascript src="application.js"/>
+</body>
+</html>
+```
 
 # Resources plugin
 
@@ -115,55 +114,57 @@ by this plugin are:
 
     bootstrap - all bootstrap css (or less) and javascript resources
 
-A bootstrap resource depends on bootstrap-css and bootstrap-js.
+A bootstrap resource depends on `bootstrap-css` and `bootstrap-js`.
 
 ## Usage in Grails Resources support
 
 Declare bootstrap resource module in GSP page header:
-
-    <r:require modules="bootstrap"/>
+```gsp
+<r:require modules="bootstrap"/>
+```
 
 ## Usage in GSP page with Resource support
-
-    <html>
-       <head>
-          <meta name="layout" content="main"/>
-          <r:require modules="bootstrap"/>
-       </head>
-    <body>
+```gsp
+<html>
+    <head>
+        <meta name="layout" content="main"/>
+        <r:require modules="bootstrap"/>
+    </head>
+<body>
     <h1> Hello World </h1>
-    </body>
-    </html>
-
+</body>
+</html>
+```
 
 ## Edit your Sitemesh layout
 
-Your grails-app/views/layouts/main.gsp:
-
-    <!DOCTYPE html>
-    <html lang="en">
-       <head>
-          <g:layoutTitle/>
-          <r:layoutResources/>
-       </head>
-       <body>
-          <g:layoutBody/>
-          <r:layoutResources/>
-       </body>
-    </html>
+Your `grails-app/views/layouts/main.gsp`:
+```gsp
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <g:layoutTitle/>
+    <r:layoutResources/>
+</head>
+<body>
+    <g:layoutBody/>
+    <r:layoutResources/>
+</body>
+</html>
+```
 
 ## LESS support
 
-To use less you must use the asset-pipeline plugin, since the less plugins for
-resources (less-resources and lesscss-resources) has not been updated to LESS 1.6,
+To use less you must use the `asset-pipeline` plugin, since the less plugins for
+resources (`less-resources` and `lesscss-resources`) has not been updated to LESS 1.6,
 which is required since Bootstrap 3.1.
 
 # Config.groovy
 
-
-Fix grails taglib g:paginate to work with bootstrap css.
-
-    grails.plugins.twitterbootstrap.fixtaglib = true
+Fix grails taglib `<g:paginate/>` to work with bootstrap css.
+```groovy
+grails.plugins.twitterbootstrap.fixtaglib = true
+```
 
 Control plugin resources bundling.
 
@@ -175,25 +176,22 @@ Control plugin resources bundling.
         false: disable bundling
         default value: 'bundle_bootstrap'
 
-Example in grails-app/conf/Config.groovy:
-
-    grails.plugins.twitterbootstrap.fixtaglib = true
-    grails.plugins.twitterbootstrap.defaultBundle = 'bundle_bootstrap'
-
+Example in `grails-app/conf/Config.groovy`:
+```groovy
+grails.plugins.twitterbootstrap.fixtaglib = true
+grails.plugins.twitterbootstrap.defaultBundle = 'bundle_bootstrap'
+```
 
 # Example
 
 There is an [example grails project](http://github.com/robfletcher/twitter-bootstrap-scaffolding) that provides scaffolded views.robfletcher/twitter-bootstrap-scaffolding
 
 # Logging
-
-
-    grails.plugins.twitterbootstrap - log category
+`grails.plugins.twitterbootstrap` - log category
 
 # Versioning
 
-
-    Plugin version convention is <original-twitter-boostrap-version>.<plugin-version>
+Plugin version convention is <original-twitter-boostrap-version>.<plugin-version>
 
 
 # Upgrading to 3.0.0
