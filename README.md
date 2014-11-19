@@ -26,14 +26,14 @@ the default since Grails 2.4.0 and replaces the resources plugin.
 To include your bootstrap resources add the following to your application's css
 or js file.
 
-Javascript `application.js`:
+Javascript `grails-app/assets/javascripts/application.js`:
 ```javascript
 //= require bootstrap
 
 console.log("My javascript goes here");
 ```
 
-Stylesheet `application.css`:
+Stylesheet `grails-app/assets/javascripts/application.css`:
 ```css
 /*
 *= require bootstrap
