@@ -20,7 +20,7 @@ To get started -- checkout http://twbs.github.io/bootstrap !
 
 # Including the resources with Asset-Pipeline plugin
 
-The recommended way is to use the asset-pipeline plugin (minimal 0.1.7). It is
+The recommended way is to use the [asset-pipeline plugin](http://grails.org/plugin/asset-pipeline) (minimal 0.1.7). It is
 the default since Grails 2.4.0 and replaces the resources plugin.
 
 To include your bootstrap resources add the following to your application's css
