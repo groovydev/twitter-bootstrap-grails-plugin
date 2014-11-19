@@ -166,15 +166,12 @@ Fix grails taglib `<g:paginate/>` to work with bootstrap css.
 grails.plugins.twitterbootstrap.fixtaglib = true
 ```
 
-Control plugin resources bundling.
-
-    Configuration key:
-    grails.plugins.twitterbootstrap.defaultBundle
-
-    Configuration values:
-        'bundle_name': bundle resources using bundle name
-        false: disable bundling
-        default value: 'bundle_bootstrap'
+## Control plugin resources bundling.
+Configuration key `grails.plugins.twitterbootstrap.defaultBundle`
+Configuration values:
+* `bundle_name`: bundle resources using bundle name
+* `false`: disable bundling
+* default value: `bundle_bootstrap`
 
 Example in `grails-app/conf/Config.groovy`:
 ```groovy
@@ -187,11 +184,12 @@ grails.plugins.twitterbootstrap.defaultBundle = 'bundle_bootstrap'
 There is an [example grails project](http://github.com/robfletcher/twitter-bootstrap-scaffolding) that provides scaffolded views.robfletcher/twitter-bootstrap-scaffolding
 
 # Logging
+
 `grails.plugins.twitterbootstrap` - log category
 
 # Versioning
 
-Plugin version convention is <original-twitter-boostrap-version>.<plugin-version>
+Plugin version convention is `<original-twitter-boostrap-version>.<plugin-version>`
 
 
 # Upgrading to 3.0.0
