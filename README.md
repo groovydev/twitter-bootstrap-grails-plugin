@@ -41,7 +41,7 @@ Stylesheet `application.css`:
 ```
 
 ## LESS Support
-LESS Is also available if `less-asset-pipeline` plugin is used.
+LESS Is also available if [less-asset-pipeline](http://grails.org/plugin/less-asset-pipeline) plugin is used.
 
 1. Install the `less-asset-pipeline` plugin
 2. Add the following to `Config.groovy` to optimize compilation
@@ -156,7 +156,7 @@ Your `grails-app/views/layouts/main.gsp`:
 ## LESS support
 
 To use less you must use the `asset-pipeline` plugin, since the less plugins for
-resources (`less-resources` and `lesscss-resources`) has not been updated to LESS 1.6,
+resources ([less-resources](http://grails.org/plugin/less-resources) and [lesscss-resources](http://grails.org/plugin/lesscss-resources)) has not been updated to LESS 1.6,
 which is required since Bootstrap 3.1.
 
 # Config.groovy
