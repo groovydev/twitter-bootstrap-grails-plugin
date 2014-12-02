@@ -5,9 +5,9 @@ Provides Bootstrap CSS framework resource files.
 
 Use in `BuildConfig.groovy`
 ```groovy
-plugin {
+plugins {
     /// whatever
-    runtime ':twitter-bootstrap:$version' // current: 3.3.0
+    runtime ':twitter-bootstrap:$version' // current: 3.3.1
     // else whatever
 }
 ```
