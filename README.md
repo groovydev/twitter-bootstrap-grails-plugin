@@ -7,7 +7,7 @@ Use in `BuildConfig.groovy`
 ```groovy
 plugins {
     /// whatever
-    runtime ':twitter-bootstrap:$version' // current: 3.3.1
+    runtime ':twitter-bootstrap:$version' // current: 3.3.2
     // else whatever
 }
 ```
@@ -208,6 +208,9 @@ which also includes Bootstrap layout.
 See http://getbootstrap.com/css/ for the updated documentation.
 
 # History
+
+3.3.2
+- Upgraded to Bootstrap 3.3.2
 
 3.3.1
 - Upgraded to Bootstrap 3.3.1
