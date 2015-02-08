@@ -51,7 +51,7 @@ LESS Is also available if [less-asset-pipeline](http://grails.org/plugin/less-as
    grails.assets.plugin."twitter-bootstrap".excludes = ["**/*.less"]
    grails.assets.plugin."twitter-bootstrap".includes = ["bootstrap.less"]
    ```
-3. Create `rails-app/assets/stylesheets/custom-bootstrap.less`:
+3. Create `grails-app/assets/stylesheets/custom-bootstrap.less`:
 
    ```css
    @import "bootstrap.less";
