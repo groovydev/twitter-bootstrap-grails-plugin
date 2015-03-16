@@ -209,6 +209,9 @@ See http://getbootstrap.com/css/ for the updated documentation.
 
 # History
 
+3.3.4
+- Upgraded to Bootstrap 3.3.4
+
 3.3.2.1
 - Added missing less files from 3.3.2
 
