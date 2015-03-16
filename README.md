@@ -7,7 +7,7 @@ Use in `BuildConfig.groovy`
 ```groovy
 plugins {
     /// whatever
-    runtime ':twitter-bootstrap:$version' // current: 3.3.2
+    runtime ':twitter-bootstrap:$version' // current: 3.3.4
     // else whatever
 }
 ```
