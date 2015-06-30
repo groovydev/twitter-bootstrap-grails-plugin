@@ -1,13 +1,36 @@
 # Bootstrap CSS  for Grails
 ## CSS framework as Grails plugin
 
+## Grails 3 Compatibility
+Latest 3.3.5-SNAPSHOT comes with Grails 3 compatibility and bootstrap upgraded to v3.3.5
+
+Usage in `build.gradle`:  
+
+```  
+compile "org.grails.plugins:twitter-bootstrap:3.3.5-SNAPSHOT"
+```
+
+### Notes:
+ 1. No support for resources plugin
+ 2. Removed deprecated copy-twitterbootstrap command.
+
+### Excluding LESS files:
+Modify `build.gradle` of the app which uses the plugin by adding :  
+
+```groovy
+assets {
+    excludes = ['**/*.less']
+}
+```
+
+## Grails 2.* Usage
 Provides Bootstrap CSS framework resource files.
 
 Use in `BuildConfig.groovy`
 ```groovy
 plugins {
     /// whatever
-    runtime ':twitter-bootstrap:$version' // current: 3.3.4
+    runtime ':twitter-bootstrap:$version' // current: 3.3.5
     // else whatever
 }
 ```
@@ -208,6 +231,9 @@ which also includes Bootstrap layout.
 See http://getbootstrap.com/css/ for the updated documentation.
 
 # History
+
+3.3.5
+- Grails 3 and Bootstrap 3.3.5 upgrade
 
 3.3.4
 - Upgraded to Bootstrap 3.3.4

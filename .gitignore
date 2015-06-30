@@ -12,3 +12,5 @@ grails-*.zip
 *.log
 *.class
 target-eclipse
+build
+.gradle
