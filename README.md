@@ -12,9 +12,16 @@ compile "org.grails.plugins:twitter-bootstrap:3.3.5-SNAPSHOT"
 
 ### Notes:
  1. No support for resources plugin
- 2. Initial commit misses less support. Working on it.
- 3. Removed deprecated copy-twitterbootstrap command.
+ 2. Removed deprecated copy-twitterbootstrap command.
 
+### Excluding LESS files:
+Modify `build.gradle` of the app which uses the plugin by adding :  
+
+```groovy
+assets {
+    excludes = ['**/*.less']
+}
+```
 
 ## Grails 2.* Usage
 Provides Bootstrap CSS framework resource files.
